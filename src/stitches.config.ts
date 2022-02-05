@@ -3,6 +3,8 @@ import {
   blue,
   cyan,
   teal,
+  indigo,
+  indigoDark,
   blueDark,
   cyanDark,
   tealDark,
@@ -10,6 +12,9 @@ import {
   redDark,
   tomato,
   tomatoDark,
+  mauve,
+  mauveDark,
+  blackA,
 } from "@radix-ui/colors";
 
 export const {
@@ -22,12 +27,6 @@ export const {
   theme,
 } = createStitches({
   theme: {
-    colors: {
-      ...blue,
-      ...cyan,
-      ...teal,
-      ...red,
-    },
     space: {
       0: "0px",
       1: "0.25rem",
@@ -109,6 +108,22 @@ export const {
     },
     fonts: {
       system: "system-ui",
+    },
+    colors: {
+      ...indigo,
+      ...blue,
+      ...cyan,
+      ...teal,
+      ...red,
+      ...tomato,
+      ...mauve,
+      ...blackA,
+
+      //Aliases
+      primaryBg: "$mauve1",
+      secondaryBg: "$mauve2",
+      primaryText: "$mauve12",
+      secondarytext: "mauve11",
     },
   },
   utils: {
@@ -211,9 +226,18 @@ export const darkTheme: { [key: string]: any } = createTheme({
     ...tealDark,
     ...redDark,
     ...cyanDark,
+    ...tomatoDark,
+    ...mauveDark,
+    ...indigoDark,
+
+    primaryBg: "$mauve1",
+    secondaryBg: "$mauve2",
+    primaryText: "$mauve12",
+    secondarytext: "mauve11",
   },
 });
 
+// https://rude.im/blog/dark-theme-with-stitches-and-next-js
 export const globalStyles = globalCss({
   "@dark": {
     ":root:not(.light)": {
