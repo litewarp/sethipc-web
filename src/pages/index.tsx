@@ -5,12 +5,22 @@ import styles from '../styles/Home.module.css'
 import ThemeToggle from '../components/ThemeToggle'
 import { Box } from '@/components/primitives/Box'
 import AppHeader, { HeaderSeparator, paths } from '@/components/Header'
-import { Sidebar, SidebarToggle } from '@/components/Sidebar'
+import { MobileSidebar, SidebarToggle } from '@/components/Sidebar'
 
 export default function HomePage() {
   return (
     <Box>
-      <Sidebar paths={paths.map((path) => ({ ...path, isCurrent: false }))} />
+      <Box
+        css={{
+          position: 'absolute',
+          left: '$5',
+          top: '$5',
+          '@bp2': { display: 'none' }
+        }}
+      >
+        <SidebarToggle />
+      </Box>
+      <MobileSidebar paths={paths.map((path) => ({ ...path, isCurrent: false }))} />
       <AppHeader />
       <HeaderSeparator css={{ margin: '15px 0px' }} />
     </Box>

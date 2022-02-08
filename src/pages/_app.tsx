@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app'
 import { ThemeProvider } from 'next-themes'
-import { darkTheme, globalStyles } from '../stitches.config'
+import { darkTheme } from '@/stitches.config'
+import globalStyles from '@/styles/global'
 
 function MyApp({ Component, pageProps }: AppProps) {
   globalStyles()

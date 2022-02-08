@@ -5,6 +5,7 @@ import { blackA } from '@radix-ui/colors'
 import create from 'zustand'
 import { Cross2Icon, HamburgerMenuIcon } from '@radix-ui/react-icons'
 import { Box, Flex } from './primitives'
+import SethiPCLogo from './SethiPCLogo'
 
 /**
  * Types
@@ -113,8 +114,7 @@ const anchorIcon = css({
 const icon = css({})
 
 const Image = styled('img', {
-  height: '$8',
-  width: '100%'
+  width: 200
 })
 
 const NavAnchor = styled('a', {
@@ -149,20 +149,14 @@ const Heading = styled('h2', {
   fontSize: '$2xl'
 })
 
-const StaticSidebarContainer = styled(Flex, {
+const StaticSidebarContainer = styled('div', {
+  display: 'flex',
   position: 'fixed',
   inset: '0',
   flexDirection: 'column',
-  width: '$64',
+  width: '$4xl',
   variants: {
-    hidden: {
-      false: {
-        display: 'flex'
-      },
-      true: {
-        display: 'none'
-      }
-    }
+    hidden: { true: { display: 'none' } }
   }
 })
 
@@ -196,7 +190,7 @@ export function DesktopSidebar({ paths }: Props) {
           css={{ height: '$16', flexShrink: 0, px: '$4', bc: '$slate2' }}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <Image src="https://pluscriber.com/assets/logo.png" alt="Pluscriber" />
+          <SethiPCLogo />
           <Heading>Sethi P.C.</Heading>
           <Flex direction="column" css={{ flex: '1 1 0%', overflowY: 'auto' }}>
             <Flex as="nav" css={{ flex: '1 1 0%', px: '$2', py: '$4', gap: '$1' }}>
@@ -269,13 +263,7 @@ export function MobileSidebar({ paths }: Props) {
                 </DialogClose>
               </Flex>
               <Flex css={{ flexShrink: 0, px: '$4' }} align="center">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <Image
-                  css={{ height: '$8', width: 'auto' }}
-                  src="https://pluscriber.com/assets/logo.png"
-                  alt="Pluscriber"
-                />
-                <Heading css={{ fontSize: '$xl2' }}>Sethi P.C.</Heading>
+                <SethiPCLogo />
               </Flex>
             </DialogTitle>
             <Flex css={{ mt: '$5', flex: '1', height: '0', overflowY: 'auto' }}>
@@ -297,19 +285,8 @@ export function MobileSidebar({ paths }: Props) {
 
 const Button = styled('button', {
   px: '$4',
-  '&:focus': {
-    outline: '2px solid transparent',
-    outlineOffset: '2px',
-    boxShadow: '0 0 0 2px $mauve5'
-  },
-  variants: {
-    hidden: {
-      true: {
-        display: 'none'
-      },
-      false: { display: 'block' }
-    }
-  }
+  bc: 'transparent',
+  '&:focus': {}
 })
 
 export function SidebarToggle() {

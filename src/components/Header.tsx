@@ -6,6 +6,12 @@ import ThemeToggle from './ThemeToggle'
 import * as SeparatorPrimitive from '@radix-ui/react-separator'
 import SethiPCLogo from './SethiPCLogo'
 
+interface Path {
+  href: string
+  label: string
+  icon?: React.ReactElement
+}
+
 export const paths = [
   {
     href: '/law',
@@ -66,17 +72,24 @@ export default function AppHeader() {
           >
             SethiPC homepage
           </span>
-          <SethiPCLogo />
+          <Flex
+            as="span"
+            css={{ ai: 'center', display: 'none', '@bp2': { display: 'flex' } }}
+          >
+            <SethiPCLogo />
+          </Flex>
         </Box>
       </NextLink>
       <Flex as="nav" css={{ ai: 'center' }}>
-        {paths.map((path) => (
-          <NextLink href={path.href} passHref key={path.label}>
-            <Link variant="subtle" css={{ mr: '$7', '@bp2': { mr: '$10' } }}>
-              <Text>{path.label}</Text>
-            </Link>
-          </NextLink>
-        ))}
+        <Flex css={{ ai: 'center', display: 'none', '@bp2': { display: 'flex' } }}>
+          {paths.map((path) => (
+            <NextLink href={path.href} passHref key={path.label}>
+              <Link variant="subtle" css={{ mr: '$7', '@bp2': { mr: '$10' } }}>
+                <Text>{path.label}</Text>
+              </Link>
+            </NextLink>
+          ))}
+        </Flex>
         <ThemeToggle />
       </Flex>
     </Flex>
