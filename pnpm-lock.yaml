@@ -4,6 +4,7 @@ specifiers:
   '@radix-ui/colors': ^0.1.8
   '@radix-ui/react-dialog': ^0.1.5
   '@radix-ui/react-icons': ^1.0.3
+  '@radix-ui/react-scroll-area': ^0.1.3
   '@radix-ui/react-separator': ^0.1.3
   '@radix-ui/react-toggle': ^0.1.3
   '@stitches/react': ^1.2.6
@@ -23,6 +24,7 @@ dependencies:
   '@radix-ui/colors': 0.1.8
   '@radix-ui/react-dialog': 0.1.5_9eb0130ea7f00b7e78e913147317bb83
   '@radix-ui/react-icons': 1.0.3_react@18.0.0-rc.0
+  '@radix-ui/react-scroll-area': 0.1.3_react@18.0.0-rc.0
   '@radix-ui/react-separator': 0.1.3_react@18.0.0-rc.0
   '@radix-ui/react-toggle': 0.1.3_react@18.0.0-rc.0
   '@stitches/react': 1.2.6_react@18.0.0-rc.0
@@ -222,6 +224,12 @@ packages:
     resolution: {integrity: sha512-jwRMXYwC0hUo0mv6wGpuw254Pd9p/R6Td5xsRpOmaWkUHlooNWqVcadgyzlRumMq3xfOTXwJReU0Jv+EIy4Jbw==}
     dev: false
 
+  /@radix-ui/number/0.1.0:
+    resolution: {integrity: sha512-rpf6QiOWLHAkM4FEMYu9i+5Jr8cKT893+R4mPpcdsy4LD7omr9JfdOqj/h/xPA5+EcVrpMMlU6rrRYpUB5UI8g==}
+    dependencies:
+      '@babel/runtime': 7.17.0
+    dev: false
+
   /@radix-ui/primitive/0.1.0:
     resolution: {integrity: sha512-tqxZKybwN5Fa3VzZry4G6mXAAb9aAqKmPtnVbZpL0vsBwvOHTBwsjHVPXylocYLwEtBY9SCe665bYnNB515uoA==}
     dependencies:
@@ -240,7 +248,7 @@ packages:
   /@radix-ui/react-context/0.1.1_react@18.0.0-rc.0:
     resolution: {integrity: sha512-PkyVX1JsLBioeu0jB9WvRpDBBLtLZohVDT3BB5CTSJqActma8S8030P57mWZb4baZifMvN7KKWPAA40UmWKkQg==}
     peerDependencies:
-      react: ^16.8 || ^17.0
+      react: 18.0.0-beta-0cc724c77-20211125
     dependencies:
       '@babel/runtime': 7.17.0
       react: 18.0.0-rc.0
@@ -343,7 +351,7 @@ packages:
   /@radix-ui/react-presence/0.1.1_react@18.0.0-rc.0:
     resolution: {integrity: sha512-LsL+NcWDpFUAYCmXeH02o4pgqcSLpwxP84UIjCtpIKrsPe2vLuhcp79KC/jZJeXz+of2lUpMAxpM+eCpxFZtlg==}
     peerDependencies:
-      react: '>=16.8'
+      react: 18.0.0-beta-0cc724c77-20211125
     dependencies:
       '@babel/runtime': 7.17.0
       '@radix-ui/react-compose-refs': 0.1.0_react@18.0.0-rc.0
@@ -358,6 +366,24 @@ packages:
     dependencies:
       '@babel/runtime': 7.17.0
       '@radix-ui/react-slot': 0.1.2_react@18.0.0-rc.0
+      react: 18.0.0-rc.0
+    dev: false
+
+  /@radix-ui/react-scroll-area/0.1.3_react@18.0.0-rc.0:
+    resolution: {integrity: sha512-wn5FdX5pU8N6ygqIad4clrhyiLo3LWCdscIee2nKe2bu7AijtUs/VAqmLEoDLIi2gpkS5RclxHbiHRkaxVvccw==}
+    peerDependencies:
+      react: ^16.8 || ^17.0
+    dependencies:
+      '@babel/runtime': 7.17.0
+      '@radix-ui/number': 0.1.0
+      '@radix-ui/primitive': 0.1.0
+      '@radix-ui/react-compose-refs': 0.1.0_react@18.0.0-rc.0
+      '@radix-ui/react-context': 0.1.1_react@18.0.0-rc.0
+      '@radix-ui/react-presence': 0.1.1_react@18.0.0-rc.0
+      '@radix-ui/react-primitive': 0.1.3_react@18.0.0-rc.0
+      '@radix-ui/react-use-callback-ref': 0.1.0_react@18.0.0-rc.0
+      '@radix-ui/react-use-direction': 0.1.0_react@18.0.0-rc.0
+      '@radix-ui/react-use-layout-effect': 0.1.0_react@18.0.0-rc.0
       react: 18.0.0-rc.0
     dev: false
 
@@ -419,6 +445,15 @@ packages:
     dependencies:
       '@babel/runtime': 7.17.0
       '@radix-ui/react-use-callback-ref': 0.1.0_react@18.0.0-rc.0
+      react: 18.0.0-rc.0
+    dev: false
+
+  /@radix-ui/react-use-direction/0.1.0_react@18.0.0-rc.0:
+    resolution: {integrity: sha512-NajpY/An9TCPSfOVkgWIdXJV+VuWl67PxB6kOKYmtNAFHvObzIoh8o0n9sAuwSAyFCZVq211FEf9gvVDRhOyiA==}
+    peerDependencies:
+      react: ^16.8 || ^17.0
+    dependencies:
+      '@babel/runtime': 7.17.0
       react: 18.0.0-rc.0
     dev: false
 

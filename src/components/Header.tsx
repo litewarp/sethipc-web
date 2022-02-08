@@ -5,6 +5,7 @@ import { Text, Link, Box, Flex } from './primitives'
 import ThemeToggle from './ThemeToggle'
 import * as SeparatorPrimitive from '@radix-ui/react-separator'
 import SethiPCLogo from './SethiPCLogo'
+import { Email, Github, Twitter } from './ContactMethods'
 
 interface Path {
   href: string
@@ -20,10 +21,6 @@ export const paths = [
   {
     href: '/code',
     label: 'Code'
-  },
-  {
-    href: '/contact',
-    label: 'Contact'
   }
 ]
 
@@ -37,6 +34,7 @@ export default function AppHeader() {
   return (
     <Flex
       as="header"
+      align="center"
       css={{
         py: '$4',
         px: '$4',
@@ -72,15 +70,10 @@ export default function AppHeader() {
           >
             SethiPC homepage
           </span>
-          <Flex
-            as="span"
-            css={{ ai: 'center', display: 'none', '@bp2': { display: 'flex' } }}
-          >
-            <SethiPCLogo />
-          </Flex>
+          <SethiPCLogo />
         </Box>
       </NextLink>
-      <Flex as="nav" css={{ ai: 'center' }}>
+      <Flex as="nav" css={{ ai: 'center', minHeight: 30 }}>
         <Flex css={{ ai: 'center', display: 'none', '@bp2': { display: 'flex' } }}>
           {paths.map((path) => (
             <NextLink href={path.href} passHref key={path.label}>
@@ -90,7 +83,14 @@ export default function AppHeader() {
             </NextLink>
           ))}
         </Flex>
-        <ThemeToggle />
+        <Flex
+          css={{ ai: 'center', gap: '$2', display: 'none', '@bp2': { display: 'flex' } }}
+        >
+          <Github />
+          <Twitter />
+          <Email />
+          <ThemeToggle />
+        </Flex>
       </Flex>
     </Flex>
   )

@@ -33,7 +33,11 @@ export default function ThemeToggle() {
       pressed={resolvedTheme === 'dark'}
       onPressedChange={() => toggleTheme()}
     >
-      {resolvedTheme === 'dark' ? <SunIcon /> : <MoonIcon />}
+      {resolvedTheme === 'dark' ? (
+        <SunIcon height={20} width={20} />
+      ) : (
+        <MoonIcon height={20} width={20} />
+      )}
     </StyledToggle>
   )
 }
