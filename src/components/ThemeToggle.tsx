@@ -5,20 +5,40 @@ import { useThemeToggle } from '../hooks/useThemeToggle'
 
 const StyledToggle = styled(TogglePrimitive.Root, {
   all: 'unset',
-  backgroundColor: '$primaryBg',
+  backgroundColor: 'transparent',
   color: '$primaryText',
   height: 35,
   width: 35,
   borderRadius: 4,
+  borderWidth: 0,
+  boxSizing: 'border-box',
+  outline: 'none',
   display: 'flex',
   fontSize: 15,
   lineHeight: 1,
   alignItems: 'center',
   justifyContent: 'center',
   boxShadow: '0 2px 10px $blackA7',
-  '&:hover': { backgroundColor: '$mauve3' },
-  // "&[data-state=on]": { backgroundColor: "$tomato2", color: "$tomato9" },
-  '&:focus': { boxShadow: `0 0 0 2px $mauve4` }
+  border: '1px solid $slate7',
+  '@hover': {
+    '&:hover': {
+      backgroundColor: '$slateA3'
+    }
+  },
+  '&:active': {
+    backgroundColor: '$slateA4'
+  },
+  '&:focus': {
+    boxShadow: 'inset 0 0 0 1px $slateA8, 0 0 0 1px $slateA8'
+  },
+  '&:disabled': {
+    pointerEvents: 'none',
+    backgroundColor: 'transparent',
+    color: '$slate6'
+  }
+  // '&:hover': { backgroundColor: '$mauve3' },
+  // // "&[data-state=on]": { backgroundColor: "$tomato2", color: "$tomato9" },
+  // '&:focus': { borderColor: '$slate8', boxShadow: `0 0 0 2px $slate8` }
 })
 
 export default function ThemeToggle() {

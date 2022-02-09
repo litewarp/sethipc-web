@@ -82,6 +82,11 @@ const cssReset = {
 
 const styles = () => {
   globalCss(cssReset)()
+  globalCss({
+    body: {
+      fontFamily: '$default'
+    }
+  })
 }
 
 export default styles

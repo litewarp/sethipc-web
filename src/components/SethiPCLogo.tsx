@@ -21,10 +21,21 @@ const logoText = css({
       lg: {
         fontSize: 48
       }
+    },
+    hover: {
+      true: {
+        '&:hover': {
+          color: '$indigo10'
+        }
+      },
+      false: {
+        '&:hover': {}
+      }
     }
   },
   defaultVariants: {
-    size: 'md'
+    size: 'md',
+    hover: true
   }
 })
 
