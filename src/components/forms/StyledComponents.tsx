@@ -1,6 +1,4 @@
 import { css, styled } from '@/stitches.config'
-import React from 'react'
-import { useField } from 'react-final-form'
 
 export const Fieldset = styled('fieldset', {
   all: 'unset',
@@ -17,7 +15,7 @@ export const Label = styled('label', {
   textAlign: 'right'
 })
 
-export const Input = styled('input', {
+const inputObj = {
   all: 'unset',
   width: '100%',
   flex: '1',
@@ -33,9 +31,12 @@ export const Input = styled('input', {
   height: 35,
 
   '&:focus': { boxShadow: `0 0 0 2px $colors$indigo8` }
-})
+}
 
-export const TextArea = styled('textarea', {
+export const inputStyle = css(inputObj)
+export const Input = styled('input', inputObj)
+
+const textAreaObj = {
   all: 'unset',
   width: '100%',
   flex: '1',
@@ -52,7 +53,9 @@ export const TextArea = styled('textarea', {
   resize: 'vertical',
 
   '&:focus': { boxShadow: `0 0 0 2px $colors$indigo8` }
-})
+}
+export const textAreaStyle = css(textAreaObj)
+export const TextArea = styled('textarea', textAreaObj)
 
 export const SubmitButton = styled('button', {
   all: 'unset',
