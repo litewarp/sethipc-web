@@ -9,7 +9,7 @@ export const HomepageButton = styled('button', {
   fontFamily: '$untitled',
   borderRadius: '9999px',
   lineHeight: 1,
-  fontWeight: 500,
+  fontWeight: 600,
   textDecoration: 'none',
   display: 'inline-flex',
   alignItems: 'center',
@@ -22,12 +22,29 @@ export const HomepageButton = styled('button', {
   variants: {
     color: {
       gray: {
+        backgroundColor: '$slate4',
         color: '$slate11',
         '&:hover': {
           backgroundColor: '$slate5'
         },
+        '&:active': {
+          backgroundColor: '$slate6'
+        },
         '&:focus': {
           boxShadow: '0 0 0 1px $colors$slate8, inset 0 0 0 1px $colors$slate8'
+        }
+      },
+      grass: {
+        backgroundColor: '$grass4',
+        color: '$grass11',
+        '&:hover': {
+          backgroundColor: '$grass5'
+        },
+        '&:active': {
+          backgroundColor: '$grass6'
+        },
+        '&:focus': {
+          boxShadow: '0 0 0 1px $colors$grass8, inset 0 0 0 1px $colors$grass8'
         }
       },
 

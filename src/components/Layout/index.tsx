@@ -16,7 +16,7 @@ export function Layout(props: Props) {
     <Flex direction="column" css={{ minHeight: '100vh' }}>
       <TitleAndMetaTags title={title} />
       <Header />
-      {props.children}
+      <Box css={{ mx: 'auto', width: '100%', maxWidth: 1280 }}>{props.children}</Box>
       <Box css={{ marginTop: 'auto' }}>
         <Footer />
       </Box>

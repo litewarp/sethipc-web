@@ -42,7 +42,7 @@ const logoText = css({
 export default function SethiPCLogo(props: Props) {
   return (
     <Flex align="center" justify="center">
-      <text className={logoText()}>Sethi P.C.</text>
+      <p className={logoText()}>Sethi P.C.</p>
     </Flex>
   )
 }

@@ -60,6 +60,7 @@ const IconButton = styled('button', {
   justifyContent: 'center',
   color: '$tomato7',
   boxShadow: `0 2px 10px $colors$blackA7`,
+  marginTop: 2,
   '&:hover': { color: '$tomato8' },
   '&:focus': { boxShadow: `0 0 0 2px black` }
 })
@@ -69,6 +70,7 @@ interface Props {
 }
 
 export function ErrorTooltip(props: Props) {
+  if (!props.error) return null
   return (
     <TooltipPrimitive.Root>
       <TooltipPrimitive.Trigger asChild>

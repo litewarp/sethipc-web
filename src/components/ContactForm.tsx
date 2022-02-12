@@ -49,7 +49,11 @@ export function ContactForm(props: Props) {
             placeholder="Enter message here ..."
           />
           <SubmitButton
-            css={{ marginLeft: 'auto', width: 150, '@bp2': { width: 150 } }}
+            css={{
+              marginLeft: 'auto',
+              width: 150,
+              '@bp2': { marginRight: 50 }
+            }}
             type="submit"
           >
             Submit

@@ -1,8 +1,9 @@
 import { styled } from '@/stitches.config'
-import { ArrowRightIcon } from '@radix-ui/react-icons'
+import { ArrowRightIcon, EnvelopeClosedIcon } from '@radix-ui/react-icons'
 import { HomepageButton } from './HomePageButton'
 import { Box, Flex, Heading, Section, Paragraph, Container } from './primitives'
 import NextLink from 'next/link'
+import { ExternalIcon } from './ExternalIcon'
 
 interface HeroProps {
   title: string
@@ -20,7 +21,6 @@ export function Hero(props: HeroProps) {
           size="4"
           css={{
             mb: '$3',
-            '@bp1': { pr: 100 },
             '@bp2': { px: 180, ta: 'center' },
             '@bp3': { px: 200 }
           }}
@@ -40,12 +40,20 @@ export function Hero(props: HeroProps) {
         >
           {props.subtitle}
         </Paragraph>
-        <Flex css={{ '@bp2': { jc: 'center', my: '$7' } }}>
+        <Flex css={{ '@bp2': { jc: 'center', my: '$7', gap: '$5' } }}>
           <NextLink href="/about" passHref>
             <HomepageButton as="a" color="indigo" css={{ mr: '$3' }}>
               Learn More
               <Box css={{ ml: '$1' }}>
                 <ArrowRightIcon />
+              </Box>
+            </HomepageButton>
+          </NextLink>
+          <NextLink href="/contact" passHref>
+            <HomepageButton as="a" color="gray" css={{ mr: '$3' }}>
+              Contact
+              <Box css={{ ml: '$2' }}>
+                <ExternalIcon />
               </Box>
             </HomepageButton>
           </NextLink>
