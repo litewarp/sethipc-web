@@ -17,31 +17,31 @@ export function ContactForm(props: Props) {
         <StyledForm onSubmit={handleSubmit}>
           <Fieldset>
             <Label>Name</Label>
-            <Field
-              name="name"
-              component={Input}
-              type="text"
-              placeholder="John C. Client"
-            />
+            <Field name="name">
+              {(props) => (
+                <Input {...props.input} type="name" placeholder="e.g., John Hamm" />
+              )}
+            </Field>
           </Fieldset>
           <Fieldset>
             <Label>Email</Label>
-            <Field
-              name="email"
-              component={Input}
-              type="email"
-              placeholder="john@helpme.org"
-            />
+            <Field name="email">
+              {(props) => (
+                <Input {...props.input} type="email" placeholder="john@helpme.org" />
+              )}
+            </Field>
           </Fieldset>
           <Fieldset>
             <Label>Message</Label>
-            <Field
-              name="message"
-              component={TextArea}
-              type="text"
-              placeholder="Enter Message Here ..."
-              rows={10}
-            />
+            <Field name="message">
+              {(props) => (
+                <TextArea
+                  {...props.input}
+                  placeholder="Enter Message Here ..."
+                  rows={10}
+                />
+              )}
+            </Field>
           </Fieldset>
           <SubmitButton
             css={{ marginLeft: 'auto', width: 150, '@bp2': { width: 150 } }}
