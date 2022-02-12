@@ -4,7 +4,7 @@ import { Box } from '@/components/primitives'
 
 export default function HomePage() {
   return (
-    <Layout title="Sethi P.C. - Legal, tech, and legaltech consulting">
+    <Layout>
       <Box css={{ py: '$4' }}>
         <Hero
           title="Law, meet Technology"

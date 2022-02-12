@@ -28,8 +28,6 @@ export const NavContainer = styled(Box, {
 export function Header() {
   const router = useRouter()
   const { isOpen, toggle, setIsOpen } = useHeader()
-  const activePage = router.pathname
-  console.log(activePage)
   return (
     <NavContainer>
       <ScrollArea>
