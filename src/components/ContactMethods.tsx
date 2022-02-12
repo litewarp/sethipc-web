@@ -5,6 +5,7 @@ import {
   EnvelopeClosedIcon
 } from '@radix-ui/react-icons'
 import { IconButton } from './primitives'
+import NextLink from 'next/link'
 
 export function Github() {
   return (
@@ -36,14 +37,16 @@ export function Twitter() {
 
 export function Email() {
   return (
-    <IconButton
-      as="a"
-      href="mailto:nick@sethipc.com"
-      target="_blank"
-      rel="noreferrer"
-      title="Email"
-    >
-      <EnvelopeClosedIcon className="mail" />
-    </IconButton>
+    <NextLink href="/contact" passHref>
+      <IconButton
+        as="a"
+        href="mailto:nick@sethipc.com"
+        target="_blank"
+        rel="noreferrer"
+        title="Email"
+      >
+        <EnvelopeClosedIcon className="mail" />
+      </IconButton>
+    </NextLink>
   )
 }

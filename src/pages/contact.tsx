@@ -7,18 +7,21 @@ import { GetServerSidePropsContext } from 'next'
 export default function ContactPage(props: { csrfToken: string }) {
   return (
     <Layout>
-      <Heading size="4" css={{ textAlign: 'center', paddingTop: '$6' }}>
+      <Heading
+        size="3"
+        css={{ textAlign: 'center', paddingTop: '$6', '@bp2': { paddingTop: '$8' } }}
+      >
         How can we help you?
       </Heading>
       <Flex
         css={{
-          py: '$6',
+          py: '$4',
           px: '$6',
           mx: 'auto',
           width: '100%',
           justifyContent: 'center',
           '@bp1': { width: '90%' },
-          '@bp2': { width: '80%', py: '$9' },
+          '@bp2': { width: '80%', py: '$6' },
           '@bp3': { width: '70%' }
         }}
       >

@@ -82,7 +82,7 @@ export function Header() {
               </NavItem>
             ))}
           </Flex>
-          <Box css={{ ml: 'auto', '@bp2': { ml: '$0' } }}>
+          <Box css={{ width: 35, ml: 'auto', '@bp2': { ml: '$0' } }}>
             <ThemeToggle />
           </Box>
           <Box css={{ ml: '$2', '@bp2': { display: 'none' } }}>
