@@ -1,6 +1,5 @@
-import { Box } from '.'
+import { Box, Link } from '.'
 import NextLink from 'next/link'
-
 interface NavItemProps {
   children: React.ReactNode
   active?: boolean

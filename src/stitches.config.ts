@@ -129,76 +129,45 @@ export const {
 } = createStitches({
   theme: {
     space: {
-      0: '0px',
-      1: '0.25rem',
-      2: '0.5rem',
-      3: '0.75rem',
-      4: '1rem',
-      5: '1.25rem',
-      6: '1.5rem',
-      7: '1.75rem',
-      8: '2rem',
-      9: '2.25rem',
-      10: '2.5rem',
-      11: '2.75rem',
-      12: '3rem',
-      14: '3.5rem',
-      16: '4rem',
-      20: '5rem',
-      24: '6rem',
-      28: '7rem',
-      32: '8rem',
-      36: '9rem',
-      40: '10rem',
-      44: '11rem',
-      48: '12rem',
-      52: '13rem',
-      56: '14rem',
-      60: '15rem',
-      64: '16rem',
-      72: '18rem',
-      80: '20rem',
-      96: '24rem'
+      1: '5px',
+      2: '10px',
+      3: '15px',
+      4: '20px',
+      5: '25px',
+      6: '35px',
+      7: '45px',
+      8: '65px',
+      9: '80px'
     },
     sizes: {
-      0: '0rem',
-      none: ' none',
-      xs: ' 20rem',
-      sm: ' 24rem',
-      md: ' 28rem',
-      lg: ' 32rem',
-      xl: ' 36rem',
-      '2xl': ' 42rem',
-      '3xl': ' 48rem',
-      '4xl': ' 56rem',
-      '5xl': ' 64rem',
-      '6xl': ' 72rem',
-      '7xl': ' 80rem',
-      full: '100%'
+      1: '5px',
+      2: '10px',
+      3: '15px',
+      4: '20px',
+      5: '25px',
+      6: '35px',
+      7: '45px',
+      8: '65px',
+      9: '80px'
     },
     fontSizes: {
-      xs: '0.75rem',
-      sm: '0.875rem',
-      base: '1rem',
-      lg: '1.125rem',
-      xl: '1.25rem',
-      '2xl': '1.5rem',
-      '3xl': '1.875rem',
-      '4xl': '2.25rem',
-      '5xl': '3rem',
-      '6xl': '3.75rem',
-      '7xl': '4.5rem',
-      '8xl': '6rem',
-      '9xl': '8rem'
+      1: '12px',
+      2: '13px',
+      3: '15px',
+      4: '17px',
+      5: '19px',
+      6: '21px',
+      7: '27px',
+      8: '35px',
+      9: '59px'
     },
     radii: {
-      sm: '0.125rem',
-      md: '0.375rem',
-      lg: '0.5rem',
-      xl: '0.75rem',
-      '2xl': '1rem',
-      '3xl': '1.5rem',
-      full: '9999px'
+      1: '4px',
+      2: '6px',
+      3: '8px',
+      4: '12px',
+      round: '50%',
+      pill: '9999px'
     },
     zIndices: {
       1: '100',
@@ -412,15 +381,14 @@ export const {
     })
   },
   media: {
-    bp1: `(min-width: 640px)`,
-    bp2: `(min-width: 768px)`,
-    bp3: `(min-width: 1024px)`,
-    bp4: `(min-width: 1280px)`,
-    bp5: `(min-width: 1536px)`,
-    motion: `(prefers-reduced-motion)`,
-    hover: `(hover: hover)`,
-    dark: `(prefers-color-scheme: dark)`,
-    light: `(prefers-color-scheme: light)`
+    bp1: '(min-width: 520px)',
+    bp2: '(min-width: 900px)',
+    bp3: '(min-width: 1200px)',
+    bp4: '(min-width: 1800px)',
+    motion: '(prefers-reduced-motion)',
+    hover: '(any-hover: hover)',
+    dark: '(prefers-color-scheme: dark)',
+    light: '(prefers-color-scheme: light)'
   }
 })
 
@@ -500,23 +468,5 @@ export const darkTheme: { [key: string]: any } = createTheme('dark-theme', {
   }
 })
 
-// https://rude.im/blog/dark-theme-with-stitches-and-next-js
-// export const globalStyles = globalCss({
-//   body: { fontFamily: '$default' },
-//   '@dark': {
-//     ':root:not(.light)': {
-//       ...Object.keys(darkTheme.colors).reduce((varSet, currentColorKey) => {
-//         const currentColor = darkTheme.colors[currentColorKey]
-//         const currentColorValue =
-//           currentColor.value.substring(0, 1) === '$'
-//             ? `colors${currentColor.value}`
-//             : currentColor.value
-
-//         return {
-//           [currentColor.variable]: currentColorValue,
-//           ...varSet
-//         }
-//       }, {})
-//     }
-//   }
-// })
+export type CSS = Stitches.CSS<typeof config>
+export type { VariantProps } from '@stitches/react'

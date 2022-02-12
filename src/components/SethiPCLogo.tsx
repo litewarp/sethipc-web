@@ -7,7 +7,7 @@ export interface Props {
 
 const logoText = css({
   fontFamily: '$brush',
-  color: '$indigo11',
+  color: '$indigo9',
   lineHeight: '0',
   textShadow: '0px 2px 2px $hiContrast',
   variants: {
