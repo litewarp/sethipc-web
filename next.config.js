@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   experimental: {
     esmExternals: true,
-    reactMode: 'concurrent'
+    reactRoot: true
   }
 }
 

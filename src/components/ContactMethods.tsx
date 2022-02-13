@@ -38,13 +38,7 @@ export function Twitter() {
 export function Email() {
   return (
     <NextLink href="/contact" passHref>
-      <IconButton
-        as="a"
-        href="mailto:nick@sethipc.com"
-        target="_blank"
-        rel="noreferrer"
-        title="Email"
-      >
+      <IconButton as="a" title="Email">
         <EnvelopeClosedIcon className="mail" />
       </IconButton>
     </NextLink>
