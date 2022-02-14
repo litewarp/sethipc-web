@@ -2,12 +2,12 @@ import { Layout } from '@/components/Layout'
 import { Box, Grid, Heading, Flex } from '@/components/primitives'
 import { styled } from '@/stitches.config'
 import { PersonIcon } from '@radix-ui/react-icons'
+import { BioAccordion } from '@/components/SethiBio'
 
 interface Props {}
 
 const GridItem = styled('div', {
   display: 'flex',
-  padding: '$2',
   justifyContent: 'center',
   alignItems: 'center',
   height: '100%',
@@ -15,11 +15,9 @@ const GridItem = styled('div', {
     variant: {
       title: {
         gridColumn: '1 / span 4',
-        gridRow: '1 / span 1',
-        backgroundColor: '$green7'
+        gridRow: '1 / span 1'
       },
       bioLeft: {
-        backgroundColor: '$orange7',
         gridColumn: '1 / span 4',
         gridRow: '2 / span 1',
         '@bp2': {
@@ -28,7 +26,6 @@ const GridItem = styled('div', {
         }
       },
       bioRight: {
-        backgroundColor: '$yellow7',
         gridColumn: '1 / span 4',
         gridRow: '3 / span 1',
         '@bp2': {
@@ -38,8 +35,7 @@ const GridItem = styled('div', {
       },
       bottom: {
         gridColumn: '1 / span 4',
-        gridRow: '4 / 4',
-        backgroundColor: '$blue7'
+        gridRow: '4 / 4'
       }
     }
   }
@@ -50,17 +46,24 @@ export default function AboutPage(props: Props) {
     <Layout>
       <Box css={{ padding: '$6' }}>
         <Grid columns={4} rows={4} gapX="1" gapY="1">
-          <GridItem variant="title">
+          <GridItem variant="title" css={{ alignItems: 'start' }}>
             <Heading size="3">
               Sethi P.C. is the Law and Consulting Firm of Nick Sethi
             </Heading>
           </GridItem>
-          <GridItem variant="bioLeft">
+          <GridItem
+            variant="bioLeft"
+            css={{
+              px: '$2',
+              '@bp2': {
+                px: '$6'
+              }
+            }}
+          >
             <Flex
-              justify="center"
               align="center"
+              justify="center"
               css={{
-                padding: '$3',
                 borderRadius: '$1',
                 backgroundColor: '$slate2',
                 height: '100%',
@@ -71,7 +74,12 @@ export default function AboutPage(props: Props) {
               <PersonIcon height="250" width="250" />
             </Flex>
           </GridItem>
-          <GridItem variant="bioRight">3</GridItem>
+          <GridItem
+            variant="bioRight"
+            css={{ px: '$2', alignItems: 'start', '@bp2': { px: '$6' } }}
+          >
+            <BioAccordion />
+          </GridItem>
           <GridItem variant="bottom">4</GridItem>
         </Grid>
       </Box>

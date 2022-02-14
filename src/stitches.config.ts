@@ -257,6 +257,7 @@ export const {
       //Aliases
       primaryBg: '$mauve1',
       secondaryBg: '$mauve2',
+      tertiaryBg: '$mauve3',
       primaryText: '$mauve12',
       secondaryText: '$mauve11'
     }
@@ -463,6 +464,7 @@ export const darkTheme: { [key: string]: any } = createTheme('dark-theme', {
 
     primaryBg: '$mauve1',
     secondaryBg: '$mauve2',
+    tertiaryBg: '$mauve3',
     primaryText: '$mauve12',
     secondaryText: 'mauve11'
   }

@@ -3,6 +3,7 @@ import { styled, keyframes } from '@stitches/react'
 import { violet, blackA, mauve } from '@radix-ui/colors'
 import { ChevronDownIcon } from '@radix-ui/react-icons'
 import * as AccordionPrimitive from '@radix-ui/react-accordion'
+import { Box } from '../primitives'
 
 const slideDown = keyframes({
   from: { height: 0 },
@@ -16,8 +17,7 @@ const slideUp = keyframes({
 
 const StyledAccordion = styled(AccordionPrimitive.Root, {
   borderRadius: 6,
-  width: 300,
-  backgroundColor: mauve.mauve6,
+  width: '100%',
   boxShadow: `0 2px 10px ${blackA.blackA4}`
 })
 
@@ -39,7 +39,7 @@ const StyledItem = styled(AccordionPrimitive.Item, {
   '&:focus-within': {
     position: 'relative',
     zIndex: 1,
-    boxShadow: `0 0 0 2px ${mauve.mauve12}`
+    boxShadow: `0 0 0 2px $colors$mauve11`
   }
 })
 
@@ -60,18 +60,19 @@ const StyledTrigger = styled(AccordionPrimitive.Trigger, {
   justifyContent: 'space-between',
   fontSize: 15,
   lineHeight: 1,
-  color: violet.violet11,
+  fontWeight: 600,
+  color: '$primaryText',
   boxShadow: `0 1px 0 ${mauve.mauve6}`,
-  '&[data-state="closed"]': { backgroundColor: 'white' },
-  '&[data-state="open"]': { backgroundColor: 'white' },
-  '&:hover': { backgroundColor: mauve.mauve2 }
+  '&[data-state="closed"]': { backgroundColor: '$indigo3' },
+  '&[data-state="open"]': { backgroundColor: '$indigo4' },
+  '&:hover': { backgroundColor: '$mauve7' }
 })
 
 const StyledContent = styled(AccordionPrimitive.Content, {
   overflow: 'hidden',
   fontSize: 15,
-  color: mauve.mauve11,
-  backgroundColor: mauve.mauve2,
+  color: '$primaryText',
+  backgroundColor: '$tertiaryBg',
 
   '&[data-state="open"]': {
     animation: `${slideDown} 300ms cubic-bezier(0.87, 0, 0.13, 1)`
@@ -128,27 +129,29 @@ export const AccordionContent = React.forwardRef<HTMLDivElement, AccordionConten
 AccordionContent.displayName = 'AccordionContent'
 
 // Your app...
-export const AccordionDemo = () => (
-  <Accordion type="single" defaultValue="item-1" collapsible>
-    <AccordionItem value="item-1">
-      <AccordionTrigger>Is it accessible?</AccordionTrigger>
-      <AccordionContent>Yes. It adheres to the WAI-ARAI design pattern.</AccordionContent>
-    </AccordionItem>
+export function BioAccordion() {
+  return (
+    <Accordion type="single" defaultValue="item-1" collapsible>
+      <AccordionItem value="item-1">
+        <AccordionTrigger>Is it accessible?</AccordionTrigger>
+        <AccordionContent>
+          Yes. It adheres to the WAI-ARAI design pattern.
+        </AccordionContent>
+      </AccordionItem>
 
-    <AccordionItem value="item-2">
-      <AccordionTrigger>Is it unstyled?</AccordionTrigger>
-      <AccordionContent>
-        Yes. It's unstyled by default, giving you freedom over the look and feel.
-      </AccordionContent>
-    </AccordionItem>
+      <AccordionItem value="item-2">
+        <AccordionTrigger>Is it unstyled?</AccordionTrigger>
+        <AccordionContent>
+          Yes. It's unstyled by default, giving you freedom over the look and feel.
+        </AccordionContent>
+      </AccordionItem>
 
-    <AccordionItem value="item-3">
-      <AccordionTrigger>Can it be animated?</AccordionTrigger>
-      <AccordionContent>
-        Yes! You can animate the Accordion with CSS or JavaScript.
-      </AccordionContent>
-    </AccordionItem>
-  </Accordion>
-)
-
-export default AccordionDemo
+      <AccordionItem value="item-3">
+        <AccordionTrigger>Can it be animated?</AccordionTrigger>
+        <AccordionContent>
+          Yes! You can animate the Accordion with CSS or JavaScript.
+        </AccordionContent>
+      </AccordionItem>
+    </Accordion>
+  )
+}
