@@ -1,6 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { csrf } from '@/lib/csrf'
+import { sendContactEmail } from '@/lib/sendgrid'
 
 type Data = {} | string
 
@@ -16,7 +17,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
   }
 
   const missingFields: string[] = []
-  const { name, email, message } = req.body
+  const { name, email, message } = JSON.parse(req.body)
 
   if (!name) missingFields.push('name')
   if (!email) missingFields.push('email')
@@ -26,5 +27,18 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     return res.status(400).send(`Missing required fields: ${missingFields.join(', ')}`)
   }
 
-  res.status(200).json({ name: 'John Doe' })
+  try {
+    // send me an email!
+    await sendContactEmail({
+      name,
+      email,
+      message
+    })
+    res.status(200).json({ success: true })
+  } catch (e) {
+    console.error(e)
+    const response: { body: string } | undefined = (e as any).response
+    if (response) console.error(response.body)
+    res.status(500).json({ success: false, message: e })
+  }
 }

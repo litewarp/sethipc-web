@@ -26,12 +26,10 @@ const emptyObj: {} = Object.create(null)
  * to a map of invalid field names to errors.
  */
 
-type ValidationFn = (
-  val: Record<string, unknown>
-) => Promise<undefined | Record<string, string>>
-
-export const makeValidate = (schema: AnyObjectSchema): ValidationFn => {
-  return async function validate(values: Record<string, unknown>) {
+export function makeValidate<TValue = Record<string, unknown>>(
+  schema: AnyObjectSchema
+): (val: TValue) => Promise<undefined | Record<string, string>> {
+  return async function validate(values: TValue) {
     try {
       await schema.validate(values, { abortEarly: false })
     } catch (err) {
@@ -40,7 +38,9 @@ export const makeValidate = (schema: AnyObjectSchema): ValidationFn => {
   }
 }
 
-export function useValidationSchema(schema: AnyObjectSchema) {
+export function useValidationSchema<TValue = Record<string, unknown>>(
+  schema: AnyObjectSchema
+) {
   const validate = useMemo(() => makeValidate(schema), [schema])
   return validate
 }

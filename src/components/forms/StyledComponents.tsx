@@ -92,3 +92,10 @@ export const StyledForm = styled('form', {
   flexDirection: 'column',
   gap: '$3'
 })
+
+export const ErrorMessage = styled('p', {
+  all: 'unset',
+  lineHeight: 1,
+  fontSize: 15,
+  color: '$tomato7'
+})

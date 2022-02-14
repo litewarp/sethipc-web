@@ -1,10 +1,19 @@
 import { Form } from 'react-final-form'
-import { SubmitButton, StyledForm, InputField } from './forms'
+import {
+  SubmitButton,
+  StyledForm,
+  InputField,
+  StatusMessage,
+  ErrorMessage
+} from './forms'
 import * as yup from 'yup'
 import { useValidationSchema } from './forms/useValidationSchema'
+import { Contact, useNewContactMutation } from '@/hooks/useNewContact'
+import { Box } from './primitives'
 
 interface Props {
   csrfToken: string
+  onSuccess: () => void
 }
 
 const validationSchema = yup.object({
@@ -17,13 +26,14 @@ const validationSchema = yup.object({
 })
 
 export function ContactForm(props: Props) {
-  const validate = useValidationSchema(validationSchema)
+  const { csrfToken, onSuccess } = props
+  const validate = useValidationSchema<Contact>(validationSchema)
+  const { mutate, status, error } = useNewContactMutation({ onSuccess })
+  const onSubmit = (values: Contact) => mutate(values)
   return (
     <Form
-      onSubmit={(values, actions) => {
-        window.alert(JSON.stringify(values, null, 2))
-      }}
-      initialValues={{ name: '', email: '', message: '', _csrf: props.csrfToken }}
+      onSubmit={onSubmit}
+      initialValues={{ name: '', email: '', message: '', _csrf: csrfToken }}
       validate={validate}
     >
       {({ handleSubmit, form, submitting, pristine, values }) => (
@@ -58,6 +68,9 @@ export function ContactForm(props: Props) {
           >
             Submit
           </SubmitButton>
+          <Box css={{ minHeight: 18, display: status === 'error' ? 'block' : 'none' }}>
+            <ErrorMessage>{error as string}</ErrorMessage>
+          </Box>
         </StyledForm>
       )}
     </Form>

@@ -1,18 +1,29 @@
 import { ContactForm } from '@/components/ContactForm'
 import { Layout } from '@/components/Layout'
-import { Flex, Heading, Text } from '@/components/primitives'
+import { Container, Flex, Heading, Text } from '@/components/primitives'
 import { csrf } from '@/lib/csrf'
 import { GetServerSidePropsContext } from 'next'
+import { useState } from 'react'
+interface Props {
+  csrfToken: string
+}
 
-export default function ContactPage(props: { csrfToken: string }) {
+export default function ContactPage(props: Props) {
+  const { csrfToken } = props
+
+  const [success, setSuccess] = useState<boolean>(false)
+  const onSuccess = () => setSuccess((s) => !s)
+
   return (
     <Layout>
-      <Heading
-        size="3"
-        css={{ textAlign: 'center', paddingTop: '$6', '@bp2': { paddingTop: '$8' } }}
-      >
-        How can we help you?
-      </Heading>
+      {!success ? (
+        <Heading
+          size="3"
+          css={{ textAlign: 'center', paddingTop: '$6', '@bp2': { paddingTop: '$8' } }}
+        >
+          How can we help you?
+        </Heading>
+      ) : null}
       <Flex
         css={{
           py: '$4',
@@ -25,7 +36,22 @@ export default function ContactPage(props: { csrfToken: string }) {
           '@bp3': { width: '70%' }
         }}
       >
-        <ContactForm csrfToken={props.csrfToken} />
+        {success ? (
+          <Container
+            size="3"
+            css={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '$4'
+            }}
+          >
+            <Heading size="3">Thanks!</Heading>
+            <Heading size="2">Someone will be in contact with you shortly.</Heading>
+          </Container>
+        ) : (
+          <ContactForm csrfToken={csrfToken} onSuccess={onSuccess} />
+        )}
       </Flex>
     </Layout>
   )
