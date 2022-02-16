@@ -32,7 +32,7 @@ export const container = style([
     paddingX: 5
   }),
   {
-    maxWidth: '1145px'
+    maxWidth: 1145
   }
 ])
 

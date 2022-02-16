@@ -15,7 +15,7 @@ export const childContainer = style({
   marginRight: 'auto',
   height: '100%',
   width: '100%',
-  maxWidth: 1280
+  maxWidth: 1145
 })
 
 export const footerContainer = style({

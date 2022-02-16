@@ -6,21 +6,27 @@ import { sprinkles } from '@/styles'
 export const navOuterContainer = style({
   width: '100%',
   maxHeight: 'auto',
-  borderBottom: '1px solid',
+  borderBottom: `1px solid ${vars.colors.slate.slate3}`,
   borderColor: '$slate6',
   WebkitOverflowScrolling: 'touch',
   overflowX: 'hidden'
 })
 
-export const navInnerContainer = sprinkles({
-  display: 'flex',
-  alignItems: 'center',
-  paddingX: 4,
-  paddingY: {
-    mobile: 3,
-    tablet: 2
-  }
-})
+export const navInnerContainer = style([
+  sprinkles({
+    display: 'flex',
+    alignItems: 'center',
+    boxSizing: 'border-box',
+    paddingX: 4,
+    paddingY: {
+      mobile: 3,
+      tablet: 2
+    },
+    marginLeft: 'auto',
+    marginRight: 'auto'
+  }),
+  { maxWidth: 1145 }
+])
 
 export const logoContainer = style({
   boxShadow: 'border-box',

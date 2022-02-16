@@ -7,7 +7,7 @@ export const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.topDiv}>
-        <Separator className={styles.separator} />
+        <Separator size="w-40" />
       </div>
       <div className={styles.container}>
         <div className={styles.containerInner}>

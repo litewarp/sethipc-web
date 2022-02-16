@@ -1,51 +1,8 @@
-import { styled } from '@/stitches.config'
 import * as SeparatorPrimitive from '@radix-ui/react-separator'
+import { separator, SeparatorVariants } from './Separator.css'
 
-export const Separator = styled(SeparatorPrimitive.Root, {
-  border: 'none',
-  margin: 0,
-  flexShrink: 0,
-  backgroundColor: '$slate6',
-  cursor: 'default',
+type Props = SeparatorVariants & {}
 
-  variants: {
-    size: {
-      '1': {
-        '&[data-orientation="horizontal"]': {
-          height: '1px',
-          width: '$3'
-        },
-
-        '&[data-orientation="vertical"]': {
-          width: '1px',
-          height: '$3'
-        }
-      },
-      '2': {
-        '&[data-orientation="horizontal"]': {
-          height: '1px',
-          width: '$7'
-        },
-
-        '&[data-orientation="vertical"]': {
-          width: '1px',
-          height: '$7'
-        }
-      },
-      '3': {
-        '&[data-orientation="horizontal"]': {
-          height: '1px',
-          width: '$9'
-        },
-
-        '&[data-orientation="vertical"]': {
-          width: '1px',
-          height: '$9'
-        }
-      }
-    }
-  },
-  defaultVariants: {
-    size: '1'
-  }
-})
+export function Separator(props: Props) {
+  return <SeparatorPrimitive.Root className={separator({ size: props.size })} />
+}
