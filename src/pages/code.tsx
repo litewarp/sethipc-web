@@ -1,14 +1,20 @@
 import { Layout } from '@/components/Layout/Layout'
 import { Box, Heading } from '@/components/primitives'
+import { sprinkles } from '@/styles'
 
 export default function CodePage() {
   return (
     <Layout>
-      <Box css={{ py: '$6', px: '$4', '@bp2': { px: '$9' } }}>
-        <Heading size="3" css={{ '@bp1': { textAlign: 'center' } }}>
-          Building the Next Generation of Legal Tools
-        </Heading>
-      </Box>
+      <div
+        className={sprinkles({
+          display: 'block',
+          paddingX: 4,
+          paddingY: { mobile: 6, tablet: 9 },
+          textAlign: { mobile: 'left', tablet: 'center' }
+        })}
+      >
+        <Heading size={3}>Building the Next Generation of Legal Tools</Heading>
+      </div>
     </Layout>
   )
 }

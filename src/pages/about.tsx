@@ -3,6 +3,7 @@ import { Box, Grid, Heading, Flex } from '@/components/primitives'
 import { styled } from '@/stitches.config'
 import { PersonIcon } from '@radix-ui/react-icons'
 import { BioAccordion } from '@/components/SethiBio'
+import { sprinkles } from '@/styles'
 
 interface Props {}
 
@@ -44,10 +45,10 @@ const GridItem = styled('div', {
 export default function AboutPage(props: Props) {
   return (
     <Layout>
-      <Box css={{ padding: '$6' }}>
+      <div className={sprinkles({ padding: 6 })}>
         <Grid columns={4} rows={4} gapX="1" gapY="1">
           <GridItem variant="title" css={{ alignItems: 'start' }}>
-            <Heading size="3">
+            <Heading size={3}>
               Sethi P.C. is the Law and Consulting Firm of Nick Sethi
             </Heading>
           </GridItem>
@@ -82,7 +83,7 @@ export default function AboutPage(props: Props) {
           </GridItem>
           <GridItem variant="bottom">4</GridItem>
         </Grid>
-      </Box>
+      </div>
     </Layout>
   )
 }

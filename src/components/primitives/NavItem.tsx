@@ -1,4 +1,3 @@
-import { Box, Link } from '.'
 import NextLink from 'next/link'
 import * as styles from './NavItem.css'
 

@@ -3,7 +3,7 @@ import * as DialogPrimitive from '@radix-ui/react-dialog'
 import create from 'zustand'
 import { Cross2Icon, HamburgerMenuIcon } from '@radix-ui/react-icons'
 import { Box, Flex } from '../primitives'
-import SethiPCLogo from '../SethiPCLogo'
+import { SethiPCLogo } from '../SethiPCLogo'
 import {
   DialogRoot,
   DialogOverlay,
