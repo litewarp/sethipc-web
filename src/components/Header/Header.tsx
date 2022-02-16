@@ -1,7 +1,7 @@
 import NextLink from 'next/link'
 import { HamburgerMenuIcon } from '@radix-ui/react-icons'
 import ThemeToggle from '../ThemeToggle'
-import SethiPCLogo from '../SethiPCLogo'
+import { SethiPCLogo } from '../SethiPCLogo'
 import { ScrollArea } from './ScrollArea'
 import { IconButton } from '../primitives/IconButton/IconButton'
 import { useHeader } from './useHeader'

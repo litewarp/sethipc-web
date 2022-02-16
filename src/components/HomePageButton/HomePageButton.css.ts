@@ -1,5 +1,4 @@
 import { recipe, RecipeVariants } from '@vanilla-extract/recipes'
-import { style } from '@vanilla-extract/css'
 import { vars, sprinkles } from '@/styles'
 
 export const button = recipe({

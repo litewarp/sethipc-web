@@ -15,3 +15,15 @@ export function HomePageButton(props: Props) {
     </button>
   )
 }
+
+type AnchorProps = styles.HomePageButtonVariants &
+  React.HTMLProps<HTMLAnchorElement> & { children: React.ReactNode }
+
+export function HomePageAnchor(props: AnchorProps) {
+  const { color, children, ...rest } = props
+  return (
+    <a {...rest} className={styles.button({ color })}>
+      {children}
+    </a>
+  )
+}

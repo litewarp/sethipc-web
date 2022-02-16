@@ -1,9 +1,10 @@
 import { styled } from '@/stitches.config'
 import { ArrowRightIcon, EnvelopeClosedIcon } from '@radix-ui/react-icons'
-import { HomepageButton } from './HomePageButton/HomePageButton'
-import { Box, Flex, Heading, Section, Paragraph, Container } from './primitives'
+import { HomePageAnchor, HomePageButton } from './HomePageButton'
+import { Box, Heading } from './primitives'
 import NextLink from 'next/link'
 import { ExternalIcon } from './ExternalIcon'
+import { sprinkles } from '@/styles'
 
 interface HeroProps {
   title: string
@@ -16,49 +17,51 @@ export function Hero(props: HeroProps) {
       size={{ '@initial': '2', '@bp1': '3' }}
       css={{ pt: '$3', '@bp2': { pt: '$6' } }}
     >
-      <Container size="3">
-        <Heading
-          size="4"
-          css={{
-            mb: '$3',
-            '@bp2': { px: 180, ta: 'center' },
-            '@bp3': { px: 200 }
-          }}
-        >
-          {props.title}
-        </Heading>
-        <Paragraph
-          size="2"
-          css={{
-            mb: '$6',
-            '@bp2': {
-              mx: 230,
-              ta: 'center',
-              mb: '$7'
-            }
-          }}
+      <div
+        className={sprinkles({
+          display: 'block',
+          flexShrink: 0,
+          marginX: 'auto',
+          maxWidth: '1145px',
+          paddingX: 5
+        })}
+      >
+        <Heading size={4}>{props.title}</Heading>
+        <p
+          className={sprinkles({
+            fontSize: 2,
+            marginBottom: { mobile: 6, tablet: 7 },
+            textAlign: { tablet: 'center' }
+          })}
         >
           {props.subtitle}
-        </Paragraph>
-        <Flex css={{ '@bp2': { jc: 'center', my: '$7', gap: '$5' } }}>
+        </p>
+        <div
+          className={sprinkles({
+            display: 'flex',
+            justifyContent: { tablet: 'center' },
+            marginY: { tablet: 7 },
+            gap: { tablet: 5 }
+          })}
+        >
           <NextLink href="/about" passHref>
-            <HomepageButton as="a" color="indigo" css={{ mr: '$3' }}>
+            <HomePageAnchor color="indigo">
               Learn More
-              <Box css={{ ml: '$1' }}>
+              <span className={sprinkles({ marginLeft: 1 })}>
                 <ArrowRightIcon />
-              </Box>
-            </HomepageButton>
+              </span>
+            </HomePageAnchor>
           </NextLink>
           <NextLink href="/contact" passHref>
-            <HomepageButton as="a" color="gray" css={{ mr: '$3' }}>
+            <HomePageAnchor color="gray">
               Contact
-              <Box css={{ ml: '$2' }}>
+              <span className={sprinkles({ marginLeft: 2 })}>
                 <ExternalIcon />
-              </Box>
-            </HomepageButton>
+              </span>
+            </HomePageAnchor>
           </NextLink>
-        </Flex>
-      </Container>
+        </div>
+      </div>
     </Section>
   )
 }
