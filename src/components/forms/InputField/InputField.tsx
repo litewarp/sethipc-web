@@ -1,6 +1,6 @@
 import React from 'react'
 import { useField } from 'react-final-form'
-import { ErrorTooltip } from '../ErrorTooltip'
+import { ErrorTooltip } from '../ErrorTooltip/ErrorTooltip'
 import * as styles from './InputField.css'
 
 type Props = {

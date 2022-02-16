@@ -1,6 +1,6 @@
 import { styled } from '@/stitches.config'
 import { ArrowRightIcon, EnvelopeClosedIcon } from '@radix-ui/react-icons'
-import { HomepageButton } from './HomePageButton'
+import { HomepageButton } from './HomePageButton/HomePageButton'
 import { Box, Flex, Heading, Section, Paragraph, Container } from './primitives'
 import NextLink from 'next/link'
 import { ExternalIcon } from './ExternalIcon'

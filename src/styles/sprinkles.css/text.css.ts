@@ -14,8 +14,8 @@ export const text = defineProperties({
     fontSize: vars.sizes,
     fontWeight: [100, 200, 300, 400, 500, 600, 700, 800, 900],
     lineHeight: ['20px', '23px', '25px', '30px', '33px', '35px', '41px', '55px'],
-    letterSpacing: ['-.015em', '-.016em', '-0.31em', '-0.34em', '-0.55em'],
-    textIndent: ['-.005em', '-.005em', '.018em', '-.025em'],
+    letterSpacing: ['-.015em', '-.016em', '-.031em', '-.034em', '-.055em'],
+    textIndent: ['-.005em', '-.005em', '-.018em', '-.025em'],
     textAlign: ['right', 'center', 'left']
   }
 })

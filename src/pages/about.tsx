@@ -1,4 +1,4 @@
-import { Layout } from '@/components/Layout'
+import { Layout } from '@/components/Layout/Layout'
 import { Box, Grid, Heading, Flex } from '@/components/primitives'
 import { styled } from '@/stitches.config'
 import { PersonIcon } from '@radix-ui/react-icons'

@@ -21,6 +21,7 @@ export const responsive = defineProperties({
       'space-around',
       'space-between'
     ],
+    flexShrink: [0],
     alignItems: ['stretch', 'start', 'center', 'end'],
     paddingTop: vars.space,
     paddingBottom: vars.space,
@@ -31,12 +32,16 @@ export const responsive = defineProperties({
     marginRight: vars.space,
     marginBottom: vars.space,
     maxWidth: ['430px', '715px', '1145px', 'none'],
-    position: ['static', 'relative', 'absolute', 'fixed', 'sticky']
+    position: ['static', 'relative', 'absolute', 'fixed', 'sticky'],
+    width: ['10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']
   },
   shorthands: {
     padding: ['paddingTop', 'paddingBottom', 'paddingLeft', 'paddingRight'],
     paddingX: ['paddingLeft', 'paddingRight'],
     paddingY: ['paddingTop', 'paddingBottom'],
+    margin: ['marginTop', 'marginBottom', 'marginLeft', 'marginRight'],
+    marginX: ['marginLeft', 'marginRight'],
+    marginY: ['marginTop', 'marginBottom'],
     placeItems: ['justifyContent', 'alignItems']
   }
 })

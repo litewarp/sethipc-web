@@ -1,4 +1,4 @@
-import { Layout } from '@/components/Layout'
+import { Layout } from '@/components/Layout/Layout'
 import { Box, Heading } from '@/components/primitives'
 
 export default function LawPage() {
