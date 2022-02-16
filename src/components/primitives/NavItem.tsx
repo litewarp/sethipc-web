@@ -1,6 +1,8 @@
 import { Box, Link } from '.'
 import NextLink from 'next/link'
-interface NavItemProps {
+import * as styles from './NavItem.css'
+
+type NavItemProps = {
   children: React.ReactNode
   active?: boolean
   href: string
@@ -8,36 +10,37 @@ interface NavItemProps {
 }
 
 export function NavItem(props: NavItemProps) {
-  const { children, active, href, ...rest } = props
+  const { active, href, children, ...rest } = props
   const isExternal = href.startsWith('http')
   return (
-    <Box
-      as={isExternal ? 'span' : NextLink}
-      {...(isExternal ? {} : { href, passHref: true })}
-    >
-      <Box
-        {...rest}
-        {...(isExternal ? { href, target: '_blank', rel: 'noopener noreferrer' } : {})}
-        as="a"
-        css={{
-          display: 'flex',
-          alignItems: 'center',
-          textDecoration: 'none',
-          color: '$primaryBg',
-          borderRadius: 4,
-          py: '$2',
-          px: '$5',
-          backgroundColor: active ? '$indigo5' : 'transparent',
-          userSelect: 'none',
-          minHeight: '2.5rem',
-          transition: 'background-color 50ms linear',
-          '&:hover': {
-            backgroundColor: active ? '$indigo5' : '$indigo4'
-          }
-        }}
-      >
-        {children}
-      </Box>
-    </Box>
+    <>
+      {isExternal ? (
+        <span>
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            {...rest}
+            className={styles.navAnchor({ state: active ? 'active' : undefined })}
+          >
+            {children}
+          </a>
+        </span>
+      ) : (
+        <NextLink href={href} passHref>
+          <a className={styles.navAnchor({ state: active ? 'active' : undefined })}>
+            {children}
+          </a>
+        </NextLink>
+      )}
+    </>
+  )
+}
+
+export function NavHeading(props: { children: string }) {
+  return (
+    <h4 className={styles.navHeading}>
+      {props.children[0].toUpperCase() + props.children.slice(1)}
+    </h4>
   )
 }

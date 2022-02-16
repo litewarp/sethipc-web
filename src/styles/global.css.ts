@@ -1,4 +1,5 @@
-import { globalCss } from '@/stitches.config'
+import { globalStyle } from '@vanilla-extract/css'
+import { vars } from '@/styles/vars.css'
 // https://github.com/hauptrolle/stitches-reset/blob/master/src/index.ts
 // plus
 // https://www.joshwcomeau.com/css/custom-css-reset/
@@ -42,7 +43,8 @@ const cssReset = {
    * Allow percentage-based heights in the application
    */
   'html, body': {
-    height: '100%'
+    height: '100%',
+    margin: '0'
   },
   /**
    * Typographic tweaks!
@@ -80,9 +82,10 @@ const cssReset = {
   }
 }
 
-const styles = () => {
-  globalCss(cssReset)()
-  globalCss({ body: { fontFamily: '$default' } })()
-}
-
-export default styles
+globalStyle(':root', {
+  ...cssReset,
+  fontFamily: vars.fonts.default,
+  minHeight: '100vh',
+  backgroundColor: vars.colors.bg.primary,
+  color: vars.colors.text.primary
+})

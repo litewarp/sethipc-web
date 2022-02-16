@@ -1,6 +1,8 @@
-import { styled } from '@/stitches.config'
+import React from 'react'
+import { box, BoxVariants } from './Box.css'
 
-export const Box = styled('div', {
-  // Reset
-  boxSizing: 'border-box'
-})
+type Props = BoxVariants & React.HTMLProps<HTMLDivElement> & { children: React.ReactNode }
+
+export function Box(props: Props) {
+  return <div className={box()}>{props.children}</div>
+}
