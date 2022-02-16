@@ -4,43 +4,41 @@ import {
   TwitterLogoIcon,
   EnvelopeClosedIcon
 } from '@radix-ui/react-icons'
-import { IconButton } from './primitives'
+import { IconAnchor } from './primitives'
 import NextLink from 'next/link'
 
 export function Github() {
   return (
-    <IconButton
-      as="a"
+    <IconAnchor
       href="https://github.com/litewarp"
       target="_blank"
       rel="noreferrer"
       title="Github"
     >
       <GitHubLogoIcon />
-    </IconButton>
+    </IconAnchor>
   )
 }
 
 export function Twitter() {
   return (
-    <IconButton
-      as="a"
+    <IconAnchor
       href="https://twitter.com/litewarp"
       target="_blank"
       rel="noreferrer"
       title="Github"
     >
       <TwitterLogoIcon />
-    </IconButton>
+    </IconAnchor>
   )
 }
 
 export function Email() {
   return (
     <NextLink href="/contact" passHref>
-      <IconButton as="a" title="Email">
+      <IconAnchor title="Email">
         <EnvelopeClosedIcon className="mail" />
-      </IconButton>
+      </IconAnchor>
     </NextLink>
   )
 }

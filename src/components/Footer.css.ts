@@ -1,11 +1,13 @@
 import { vars, sprinkles } from '@/styles'
 import { style } from '@vanilla-extract/css'
 
-export const footer = sprinkles({
-  display: 'block',
-  boxSizing: 'border-box',
-  paddingY: 4
-})
+export const footer = style([
+  sprinkles({
+    display: 'block',
+    boxSizing: 'border-box',
+    paddingY: 4
+  })
+])
 
 export const topDiv = sprinkles({
   display: 'flex',

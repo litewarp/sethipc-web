@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider
       attribute="class"
-      defaultTheme="system"
+      defaultTheme="light"
       value={{ dark: darkTheme, light: lightTheme }}
     >
       <QueryClientProvider client={queryClient}>

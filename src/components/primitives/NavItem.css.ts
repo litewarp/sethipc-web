@@ -15,7 +15,8 @@ export const navAnchor = recipe({
         '&:hover': {
           backgroundColor: vars.colors.indigo.indigo4
         }
-      }
+      },
+      textDecoration: 'none'
     },
     sprinkles({
       display: 'flex',

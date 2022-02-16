@@ -1,7 +1,7 @@
 import { Header } from '@/components/Header'
 import { TitleAndMetaTags } from '@/components/TitleAndMetaTags'
 import { Footer } from '@/components/Footer'
-import { childContainer, pageContainer, footerContainer } from './layout.css'
+import { childContainer, pageContainer, footerContainer } from './Layout.css'
 
 interface Props {
   title?: string
