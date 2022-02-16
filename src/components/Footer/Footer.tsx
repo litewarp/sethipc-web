@@ -1,4 +1,3 @@
-import React from 'react'
 import { Separator } from './primitives'
 import { Email, Github, Twitter } from './ContactMethods'
 import * as styles from './Footer.css'

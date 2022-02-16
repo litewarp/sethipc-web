@@ -1,4 +1,4 @@
-import { ContactForm } from '@/components/ContactForm'
+import { ContactForm } from '@/components/ContactForm/ContactForm'
 import { Layout } from '@/components/Layout'
 import { Container, Flex, Heading, Text } from '@/components/primitives'
 import { csrf } from '@/lib/csrf'

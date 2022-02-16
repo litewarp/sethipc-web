@@ -1,15 +1,9 @@
 import { Form } from 'react-final-form'
-import {
-  SubmitButton,
-  StyledForm,
-  InputField,
-  StatusMessage,
-  ErrorMessage
-} from './forms'
+import { SubmitButton, StyledForm, InputField, ErrorMessage } from '../forms'
 import * as yup from 'yup'
-import { useValidationSchema } from './forms/useValidationSchema'
+import { useValidationSchema } from '../forms/useValidationSchema'
 import { Contact, useNewContactMutation } from '@/hooks/useNewContact'
-import { Box } from './primitives'
+import * as styles from './ContactForm.css'
 
 interface Props {
   csrfToken: string
@@ -37,7 +31,7 @@ export function ContactForm(props: Props) {
       validate={validate}
     >
       {({ handleSubmit, form, submitting, pristine, values }) => (
-        <StyledForm onSubmit={handleSubmit}>
+        <form className={styles.form} onSubmit={handleSubmit}>
           <InputField
             fieldName="name"
             label="Name"
@@ -58,20 +52,15 @@ export function ContactForm(props: Props) {
             component="textarea"
             placeholder="Enter message here ..."
           />
-          <SubmitButton
-            css={{
-              marginLeft: 'auto',
-              width: 150,
-              '@bp2': { marginRight: 50 }
-            }}
-            type="submit"
-          >
+          <button className={styles.submitButton} type="submit">
             Submit
-          </SubmitButton>
-          <Box css={{ minHeight: 18, display: status === 'error' ? 'block' : 'none' }}>
-            <ErrorMessage>{error as string}</ErrorMessage>
-          </Box>
-        </StyledForm>
+          </button>
+          <div className={styles.errorMessageContainer}>
+            <p className={styles.errorMessage[error ? 'error' : 'none']}>
+              {error as string}
+            </p>
+          </div>
+        </form>
       )}
     </Form>
   )

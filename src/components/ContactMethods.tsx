@@ -1,4 +1,3 @@
-import { styled } from '@/stitches.config'
 import {
   GitHubLogoIcon,
   TwitterLogoIcon,

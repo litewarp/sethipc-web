@@ -30,7 +30,8 @@ export const responsive = defineProperties({
     marginLeft: vars.space,
     marginRight: vars.space,
     marginBottom: vars.space,
-    maxWidth: ['430px', '715px', '1145px', 'none']
+    maxWidth: ['430px', '715px', '1145px', 'none'],
+    position: ['static', 'relative', 'absolute', 'fixed', 'sticky']
   },
   shorthands: {
     padding: ['paddingTop', 'paddingBottom', 'paddingLeft', 'paddingRight'],

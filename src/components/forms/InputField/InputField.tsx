@@ -1,9 +1,7 @@
 import React from 'react'
 import { useField } from 'react-final-form'
-import { Fieldset, Label, textAreaStyle, inputStyle } from './StyledComponents'
-import { ErrorTooltip } from './ErrorTooltip'
-import { styled } from '@/stitches.config'
-import { Box, Flex } from '../primitives'
+import { ErrorTooltip } from '../ErrorTooltip'
+import * as styles from './InputField.css'
 
 type Props = {
   fieldName: string
@@ -16,40 +14,30 @@ export function InputField(props: Props) {
   const { input, meta } = useField(fieldName)
 
   return (
-    <Fieldset>
-      <Flex css={{ height: 25, alignItems: 'center', position: 'relative' }}>
-        <Label>{props.label}</Label>
-        <Flex
-          as="span"
-          css={{
-            position: 'absolute',
-            left: '-35px',
-            top: '0',
-            width: 35,
-            alignItems: 'center',
-            '@bp2': { display: 'none' }
-          }}
-        >
+    <fieldset className={styles.fieldset}>
+      <div className={styles.inputContainer}>
+        <label className={styles.label}>{props.label}</label>
+        <span className={styles.tooltipSpanMobile}>
           <ErrorTooltip error={meta.touched ? meta.error : undefined} />
-        </Flex>
-      </Flex>
+        </span>
+      </div>
       {component === 'input' ? (
         <input
           {...(rest as React.HTMLProps<HTMLInputElement>)}
           {...input}
-          className={inputStyle()}
+          className={styles.input}
         />
       ) : component === 'textarea' ? (
         <textarea
           rows={10}
           {...(rest as React.HTMLProps<HTMLTextAreaElement>)}
           {...input}
-          className={textAreaStyle()}
+          className={styles.textArea}
         />
       ) : null}
-      <Box as="span" css={{ width: 35, display: 'none', '@bp2': { display: 'block' } }}>
+      <span className={styles.tooltipSpanTablet}>
         <ErrorTooltip error={meta.touched ? meta.error : undefined} />
-      </Box>
-    </Fieldset>
+      </span>
+    </fieldset>
   )
 }
