@@ -59,7 +59,7 @@ export const button = recipe({
 
       indigo: {
         backgroundColor: vars.colors.indigo8,
-        color: vars.colors.indigo11,
+        color: vars.colors.indigo12,
         selectors: {
           '&:hover': {
             backgroundColor: vars.colors.indigo5

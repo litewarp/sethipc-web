@@ -23,10 +23,12 @@ export function Hero(props: HeroProps) {
           paddingX: 5
         })}
       >
-        <Heading size={4}>{props.title}</Heading>
+        <div className={styles.titleContainer}>
+          <Heading size={4}>{props.title}</Heading>
+        </div>
         <p
           className={sprinkles({
-            fontSize: 2,
+            fontSize: 4,
             marginBottom: { mobile: 6, tablet: 7 },
             textAlign: { tablet: 'center' }
           })}

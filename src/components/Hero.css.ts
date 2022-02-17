@@ -2,6 +2,7 @@ import { sectionBase } from '@/components/primitives/Section/Section.css'
 import { recipe } from '@vanilla-extract/recipes'
 import { sprinkles, vars } from '@/styles'
 import { style } from '@vanilla-extract/css'
+import { heading } from './primitives/Heading/Heading.css'
 
 export const heroSection = style([
   sectionBase,
@@ -16,3 +17,8 @@ export const heroSection = style([
     }
   })
 ])
+
+export const titleContainer = sprinkles({
+  textAlign: { tablet: 'center' },
+  paddingBottom: 4
+})

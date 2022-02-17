@@ -66,12 +66,12 @@ const root = createGlobalTheme(':root', {
     brush: 'brush-script-std',
     mono: 'source-code-pro, monospace',
     default: 'proxima-nova, sans-serif'
-  },
-  screens: {
-    tablet: 'screen and (min-width: 768px)',
-    desktop: 'screen and (min-width: 1024px)',
-    wide: 'screen and (min-width: 1280px)'
   }
 })
 
-export const vars = { ...root, colors }
+const screens = {
+  tablet: 'screen and (min-width: 768px)',
+  desktop: 'screen and (min-width: 1024px)',
+  wide: 'screen and (min-width: 1280px)'
+}
+export const vars = { ...root, colors, screens }

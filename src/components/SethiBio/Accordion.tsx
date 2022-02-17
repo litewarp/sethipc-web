@@ -28,15 +28,20 @@ type AccordionContentProps = {
 } & React.HTMLProps<HTMLDivElement>
 
 export const AccordionContent = React.forwardRef<HTMLDivElement, AccordionContentProps>(
-  ({ children, ...props }, forwardedRef) => (
-    <AccordionPrimitive.Content className={styles.content} {...props} ref={forwardedRef}>
-      <div className={styles.text}>{children}</div>
-    </AccordionPrimitive.Content>
-  )
+  ({ children, ...props }, forwardedRef) => {
+    return (
+      <AccordionPrimitive.Content
+        className={styles.content}
+        {...props}
+        ref={forwardedRef}
+      >
+        <div className={styles.text}>{children}</div>
+      </AccordionPrimitive.Content>
+    )
+  }
 )
 AccordionContent.displayName = 'AccordionContent'
 
-// Your app...
 export function BioAccordion() {
   return (
     <AccordionPrimitive.Root

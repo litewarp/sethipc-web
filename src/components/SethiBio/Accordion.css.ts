@@ -11,6 +11,12 @@ const slideUp = keyframes({
   to: { height: 0 }
 })
 
+export const root = style({
+  borderRadius: 6,
+  width: '100%',
+  boxShadow: `0 2px 10px ${vars.colors.blackA4}`
+})
+
 export const item = style({
   overflow: 'hidden',
   marginTop: '1px',
@@ -32,12 +38,6 @@ export const item = style({
       boxShadow: `0 0 0 2px ${vars.colors.mauve11}`
     }
   }
-})
-
-export const root = style({
-  borderRadius: 6,
-  width: '100%',
-  boxShadow: `0 2px 10px ${vars.colors.blackA4}`
 })
 
 export const header = style({
@@ -74,10 +74,10 @@ export const content = style({
   backgroundColor: vars.colors.bgDimmed,
   selectors: {
     '&[data-state="open"]': {
-      animation: `${slideDown} 300ms cubic-bezier(0.87, 0, 0.13, 1)`
+      animation: `${slideDown} 300ms cubic-bezier(0.87, 0, 0.13, 1) forwards`
     },
     '&[data-state="closed"]': {
-      animation: `${slideUp} 300ms cubic-bezier(0.87, 0, 0.13, 1)`
+      animation: `${slideUp} 300ms cubic-bezier(0.87, 0, 0.13, 1) forwards`
     }
   }
 })

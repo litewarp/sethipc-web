@@ -1,18 +1,21 @@
 import { recipe, RecipeVariants } from '@vanilla-extract/recipes'
 import { vars, sprinkles } from '@/styles'
+import { style } from '@vanilla-extract/css'
+
+export const headingBase = style([
+  sprinkles({
+    display: 'block',
+    fontWeight: 500
+  }),
+  {
+    margin: 0,
+    lineHeight: 1,
+    fontVariantNumeric: 'tabular-nums'
+  }
+])
 
 export const heading = recipe({
-  base: [
-    sprinkles({
-      display: 'block',
-      fontWeight: 500
-    }),
-    {
-      margin: 0,
-      lineHeight: 1,
-      fontVariantNumeric: 'tabular-nums'
-    }
-  ],
+  base: headingBase,
   variants: {
     size: {
       1: sprinkles({

@@ -10,7 +10,7 @@ export const text = defineProperties({
   },
   defaultCondition: 'mobile',
   properties: {
-    fontSize: vars.sizes,
+    fontSize: vars.fontSizes,
     fontWeight: [100, 200, 300, 400, 500, 600, 700, 800, 900],
     lineHeight: ['20px', '23px', '25px', '30px', '33px', '35px', '41px', '55px'],
     letterSpacing: ['-.015em', '-.016em', '-.031em', '-.034em', '-.055em'],

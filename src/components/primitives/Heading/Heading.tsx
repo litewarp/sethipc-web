@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react'
 import * as styles from './Heading.css'
+import { getSprinklesProps } from '@/components/primitives'
 
 const DEFAULT_TAG = 'h1'
 
@@ -45,9 +46,5 @@ type Props = PrimitiveProps & {
 export function Heading(props: Props) {
   const { as = 'h1', children, ...rest } = props
   const Component = components[as]
-  if (!Component) {
-    console.error(`tag not found for ${as}`)
-    return null
-  }
   return <Component {...rest}>{children}</Component>
 }
