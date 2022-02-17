@@ -33,7 +33,7 @@ export const logo = style([
     padding: 4
   }),
   {
-    backgroundColor: vars.colors.slate.slate2,
+    backgroundColor: vars.colors.slate2,
     gridColumn: 'span 1 / span 1'
   }
 ])
@@ -42,7 +42,11 @@ export const title = style([
   {
     textAlign: 'center',
     fontWeight: 600,
-    color: vars.colors.slate.slate7,
+    color: vars.colors.slate7,
     letterSpacing: '.05em'
   }
 ])
+
+export const image = style({
+  maxHeight: '3rem'
+})

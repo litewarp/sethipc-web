@@ -12,7 +12,7 @@ export const form = style([
 const errorMessageBase = style({
   lineHeight: 1,
   fontSize: 15,
-  color: vars.colors.tomato.tomato7
+  color: vars.colors.tomato7
 })
 
 export const errorMessage = styleVariants({
@@ -33,12 +33,12 @@ export const submitButton = style([
     fontWeight: 500,
     height: 35,
     width: 150,
-    backgroundColor: vars.colors.indigo.indigo4,
-    color: vars.colors.indigo.indigo11,
-    boxShadow: `0 2px 10px ${vars.colors.blackA.blackA7}`,
+    backgroundColor: vars.colors.indigo4,
+    color: vars.colors.indigo11,
+    boxShadow: `0 2px 10px ${vars.colors.blackA7}`,
     selectors: {
-      '&:hover': { backgroundColor: vars.colors.indigo.indigo5 },
-      '&:focus': { boxShadow: `0 0 0 2px ${vars.colors.indigo.indigo7}` }
+      '&:hover': { backgroundColor: vars.colors.indigo5 },
+      '&:focus': { boxShadow: `0 0 0 2px ${vars.colors.indigo7}` }
     }
   },
   sprinkles({

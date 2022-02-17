@@ -1,6 +1,6 @@
 import { Layout } from '@/components/Layout'
 import { Hero } from '@/components/Hero'
-import { logos, LogoCloud } from '@/components/LogoCloud'
+import { logos, LogoCloud } from '@/components/LogoCloud/LogoCloud'
 import { sprinkles } from '@/styles'
 
 export default function HomePage() {

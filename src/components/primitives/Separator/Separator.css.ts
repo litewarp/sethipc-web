@@ -6,7 +6,7 @@ export const separator = recipe({
     border: 'none',
     margin: 0,
     flexShrink: 0,
-    backgroundColor: vars.colors.slate.slate6,
+    backgroundColor: vars.colors.slate6,
     cursor: 'default'
   },
   variants: {

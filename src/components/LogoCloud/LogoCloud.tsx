@@ -1,4 +1,3 @@
-import { styled } from '@/stitches.config'
 import * as styles from './LogoCloud.css'
 
 interface Logos {
@@ -38,10 +37,6 @@ export interface Props {
   title: string
 }
 
-const Image = styled('img', {
-  maxHeight: '3rem'
-})
-
 export function LogoCloud(props: Props) {
   const { logos, title } = props
   return (
@@ -51,7 +46,7 @@ export function LogoCloud(props: Props) {
         {logos.map((logo) => (
           <div className={styles.logo} key={logo.alt}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <Image src={logo.src} alt={logo.alt} />
+            <img className={styles.image} src={logo.src} alt={logo.alt} />
           </div>
         ))}
       </div>

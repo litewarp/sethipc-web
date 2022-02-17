@@ -20,24 +20,24 @@ export const iconButton = recipe({
     textDecoration: 'none',
     userSelect: 'none',
     WebkitTapHighlightColor: 'transparent',
-    color: colors.text.primary,
-    backgroundColor: colors.bg.secondary,
-    border: `2px solid ${colors.slate.slate7}`,
+    color: colors.textPrimary,
+    backgroundColor: colors.bgSecondary,
+    border: `2px solid ${colors.slate7}`,
     selectors: {
       '&:hover': {
-        borderColor: colors.slate.slate8
+        borderColor: colors.slate8
       },
       '&:active': {
-        backgroundColor: colors.slate.slate2
+        backgroundColor: colors.slate2
       },
       '&:focus': {
-        borderColor: colors.slate.slate8,
-        boxShadow: `0 0 0 1px ${colors.slate.slate8}`
+        borderColor: colors.slate8,
+        boxShadow: `0 0 0 1px ${colors.slate8}`
       },
       '&:disabled': {
         pointerEvents: 'none',
         backgroundColor: 'transparent',
-        color: colors.slate.slate6
+        color: colors.slate6
       }
     }
   },
@@ -70,17 +70,17 @@ export const iconButton = recipe({
         borderWidth: 0,
         selectors: {
           '&:hover': {
-            backgroundColor: colors.slateA.slate3
+            backgroundColor: colors.slateA3
           },
           '&:focus': {
-            boxShadow: `inset 0 0 0 1px ${colors.slateA.slate8}`
+            boxShadow: `inset 0 0 0 1px ${colors.slateA8}`
           },
           '&:active': {
-            backgroundColor: colors.slateA.slate4
+            backgroundColor: colors.slateA4
           },
           '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]':
             {
-              backgroundColor: colors.slateA.slate4
+              backgroundColor: colors.slateA4
             }
         }
       },
@@ -93,37 +93,37 @@ export const iconButton = recipe({
               '0 0 transparent, 0 16px 32px hsl(206deg 12% 5% / 25%), 0 3px 5px hsl(0deg 0% 0% / 10%)'
           },
           '&:focus': {
-            borderColor: colors.slate.slate8,
-            boxShadow: `0 0 0 1px ${colors.slate.slate8}, 0 16px 32px hsl(206deg 12% 5% / 25%), 0 3px 5px hsl(0deg 0% 0% / 10%)`
+            borderColor: colors.slate8,
+            boxShadow: `0 0 0 1px ${colors.slate8}, 0 16px 32px hsl(206deg 12% 5% / 25%), 0 3px 5px hsl(0deg 0% 0% / 10%)`
           },
           '&:active': {
-            backgroundColor: colors.slate.slate4
+            backgroundColor: colors.slate4
           }
         }
       }
     },
     state: {
       active: {
-        backgroundColor: colors.slate.slate4,
+        backgroundColor: colors.slate4,
         boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
         selectors: {
           '&:hover': {
             boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)'
           },
           '&:active': {
-            backgroundColor: colors.slate.slate4
+            backgroundColor: colors.slate4
           }
         }
       },
       waiting: {
-        backgroundColor: colors.slate.slate4,
+        backgroundColor: colors.slate4,
         boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)',
         selectors: {
           '&:hover': {
             boxShadow: 'inset 0 0 0 1px hsl(206,10%,76%)'
           },
           '&:active': {
-            backgroundColor: colors.slate.slate4
+            backgroundColor: colors.slate4
           }
         }
       }

@@ -1,4 +1,4 @@
-import { sectionBase } from '@/components/primitives/Section.css'
+import { sectionBase } from '@/components/primitives/Section/Section.css'
 import { recipe } from '@vanilla-extract/recipes'
 import { sprinkles, vars } from '@/styles'
 import { style } from '@vanilla-extract/css'

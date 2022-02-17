@@ -29,7 +29,7 @@ export const label = style([
   }),
   {
     fontSize: 15,
-    color: vars.colors.indigo.indigo11,
+    color: vars.colors.indigo11,
     width: '90px'
   }
 ])
@@ -45,12 +45,12 @@ export const input = style({
   padding: '0 10px',
   fontSize: 15,
   lineHeight: 1,
-  color: vars.colors.slate.slate11,
-  boxShadow: `0 0 0 1px ${vars.colors.indigo.indigo7}`,
+  color: vars.colors.slate11,
+  boxShadow: `0 0 0 1px ${vars.colors.indigo7}`,
   height: 35,
   minHeight: 35,
   selectors: {
-    '&:focus': { boxShadow: `0 0 0 2px ${vars.colors.indigo.indigo8}` }
+    '&:focus': { boxShadow: `0 0 0 2px ${vars.colors.indigo8}` }
   }
 })
 
@@ -65,12 +65,12 @@ export const textArea = style({
   padding: '10px',
   fontSize: 15,
   lineHeight: 1,
-  color: vars.colors.slate.slate11,
-  boxShadow: `0 0 0 1px ${vars.colors.indigo.indigo7}`,
+  color: vars.colors.slate11,
+  boxShadow: `0 0 0 1px ${vars.colors.indigo7}`,
   height: 'auto',
   resize: 'vertical',
   selectors: {
-    '&:focus': { boxShadow: `0 0 0 2px ${vars.colors.indigo.indigo8}` }
+    '&:focus': { boxShadow: `0 0 0 2px ${vars.colors.indigo8}` }
   }
 })
 

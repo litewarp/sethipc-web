@@ -1,13 +1,12 @@
-import { defineProperties } from '@vanilla-extract/sprinkles'
+import { ConditionalValue, defineProperties } from '@vanilla-extract/sprinkles'
 import { vars } from '../vars.css'
-import { recipe } from '@vanilla-extract/recipes'
-import { sprinkles } from '.'
 
 export const text = defineProperties({
   conditions: {
     mobile: {},
-    tablet: { '@media': 'screen and (min-width: 768px)' },
-    desktop: { '@media': 'screen and (min-width: 1024px)' }
+    tablet: { '@media': vars.screens.tablet },
+    desktop: { '@media': vars.screens.desktop },
+    wide: { '@media': vars.screens.wide }
   },
   defaultCondition: 'mobile',
   properties: {
@@ -19,3 +18,7 @@ export const text = defineProperties({
     textAlign: ['right', 'center', 'left']
   }
 })
+export type TextValue<Value extends string | number> = ConditionalValue<
+  typeof text,
+  Value
+>

@@ -64,11 +64,11 @@ export const errorIcon = style({
   display: 'inline-flex',
   alignItems: 'center',
   justifyContent: 'center',
-  color: vars.colors.tomato.tomato7,
-  boxShadow: `0 2px 10px ${vars.colors.blackA.blackA7}`,
+  color: vars.colors.tomato7,
+  boxShadow: `0 2px 10px ${vars.colors.blackA7}`,
   marginTop: 2,
   selectors: {
-    '&:hover': { color: vars.colors.tomato.tomato7 },
-    '&:focus': { boxShadow: `0 0 0 2px ${vars.colors.blackA.blackA2}` }
+    '&:hover': { color: vars.colors.tomato7 },
+    '&:focus': { boxShadow: `0 0 0 2px ${vars.colors.blackA2}` }
   }
 })

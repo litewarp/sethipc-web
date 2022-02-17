@@ -1,5 +1,4 @@
 import React, { ReactNode } from 'react'
-import { VariantProps, CSS } from '@/stitches.config'
 import * as styles from './Heading.css'
 
 const DEFAULT_TAG = 'h1'

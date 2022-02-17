@@ -6,7 +6,7 @@ import { sprinkles } from '@/styles'
 export const navOuterContainer = style({
   width: '100%',
   maxHeight: 'auto',
-  borderBottom: `1px solid ${vars.colors.slate.slate3}`,
+  borderBottom: `1px solid ${vars.colors.slate3}`,
   borderColor: '$slate6',
   WebkitOverflowScrolling: 'touch',
   overflowX: 'hidden'

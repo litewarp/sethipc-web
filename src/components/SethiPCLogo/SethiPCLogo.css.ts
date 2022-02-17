@@ -10,9 +10,9 @@ export const container = sprinkles({
 export const logoText = recipe({
   base: {
     fontFamily: vars.fonts.brush,
-    color: vars.colors.indigo.indigo9,
+    color: vars.colors.indigo9,
     lineHeight: 0,
-    textShadow: `0px 2px 2px ${vars.colors.slate.slate2}`
+    textShadow: `0px 2px 2px ${vars.colors.slate2}`
   },
   variants: {
     size: {
@@ -22,10 +22,10 @@ export const logoText = recipe({
     },
     hover: {
       true: {
-        selectors: { '&:hover': { color: vars.colors.indigo.indigo10 } }
+        selectors: { '&:hover': { color: vars.colors.indigo10 } }
       },
       false: {
-        selectors: { '&:hover': { color: vars.colors.indigo.indigo8 } }
+        selectors: { '&:hover': { color: vars.colors.indigo8 } }
       }
     }
   },

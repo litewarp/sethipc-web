@@ -55,8 +55,8 @@ globalStyle('html, body', {
   height: '100%',
   margin: 0,
   minHeight: '100vh',
-  backgroundColor: vars.colors.bg.secondary,
-  color: vars.colors.text.primary,
+  backgroundColor: vars.colors.bgSecondary,
+  color: vars.colors.textPrimary,
   fontFamily: vars.fonts.default
 })
 /**

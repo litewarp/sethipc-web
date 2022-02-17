@@ -1,16 +1,26 @@
-import { defineProperties, createSprinkles } from '@vanilla-extract/sprinkles'
+import { createVar } from '@vanilla-extract/css'
+import {
+  defineProperties,
+  createSprinkles,
+  ConditionalValue
+} from '@vanilla-extract/sprinkles'
 import { vars } from '../vars.css'
 
 export const responsive = defineProperties({
   conditions: {
     mobile: {},
-    tablet: { '@media': 'screen and (min-width: 768px)' },
-    desktop: { '@media': 'screen and (min-width: 1024px)' }
+    tablet: { '@media': vars.screens.tablet },
+    desktop: { '@media': vars.screens.desktop },
+    wide: { '@media': vars.screens.wide }
   },
   defaultCondition: 'mobile',
   properties: {
     boxSizing: ['border-box'],
     gap: vars.space,
+    gapY: vars.space,
+    gapX: vars.space,
+    color: vars.colors,
+    backgroundColor: vars.colors,
     display: ['none', 'flex', 'block', 'inline-block', 'inline-flex', 'grid'],
     flexDirection: ['row', 'column'],
     justifyContent: [
@@ -21,7 +31,7 @@ export const responsive = defineProperties({
       'space-around',
       'space-between'
     ],
-    flexShrink: [0],
+    flexShrink: [0, 1],
     alignItems: ['stretch', 'start', 'center', 'end'],
     paddingTop: vars.space,
     paddingBottom: vars.space,
@@ -46,6 +56,12 @@ export const responsive = defineProperties({
     marginY: ['marginTop', 'marginBottom'],
     placeItems: ['justifyContent', 'alignItems'],
     gridRows: ['gridTemplateRows'],
-    gridColumns: ['gridTemplateColumns']
+    gridColumns: ['gridTemplateColumns'],
+    bg: ['backgroundColor']
   }
 })
+
+export type ResponsiveValue<Value extends string | number> = ConditionalValue<
+  typeof responsive,
+  Value
+>

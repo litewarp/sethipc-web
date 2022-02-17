@@ -24,6 +24,7 @@ const root = createGlobalTheme(':root', {
     9: '80px'
   },
   sizes: {
+    auto: 'auto',
     1: '5px',
     2: '10px',
     3: '15px',
@@ -65,6 +66,11 @@ const root = createGlobalTheme(':root', {
     brush: 'brush-script-std',
     mono: 'source-code-pro, monospace',
     default: 'proxima-nova, sans-serif'
+  },
+  screens: {
+    tablet: 'screen and (min-width: 768px)',
+    desktop: 'screen and (min-width: 1024px)',
+    wide: 'screen and (min-width: 1280px)'
   }
 })
 

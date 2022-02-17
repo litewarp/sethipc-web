@@ -6,14 +6,14 @@ export const navAnchor = recipe({
   base: [
     {
       borderRadius: 4,
-      color: vars.colors.text.primary,
+      color: vars.colors.textPrimary,
       backgroundColor: 'transparent',
       userSelect: 'none',
       minHeight: '2.5rem',
       transition: 'background-color 50ms linear',
       selectors: {
         '&:hover': {
-          backgroundColor: vars.colors.indigo.indigo4
+          backgroundColor: vars.colors.indigo4
         }
       },
       textDecoration: 'none'
@@ -28,9 +28,9 @@ export const navAnchor = recipe({
   variants: {
     state: {
       active: {
-        backgroundColor: vars.colors.indigo.indigo5,
+        backgroundColor: vars.colors.indigo5,
         '&:hover': {
-          backgroundColor: vars.colors.indigo.indigo5
+          backgroundColor: vars.colors.indigo5
         }
       }
     }

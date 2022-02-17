@@ -1,4 +1,3 @@
-import { styled } from '@/stitches.config'
 import { ArrowRightIcon, EnvelopeClosedIcon } from '@radix-ui/react-icons'
 import { HomePageAnchor, HomePageButton } from './HomePageButton'
 import { Box, Heading } from './primitives'
