@@ -61,8 +61,8 @@ export const trigger = style({
   color: vars.colors.textPrimary,
   boxShadow: `0 1px 0 ${vars.colors.mauve6}`,
   selectors: {
-    '&[data-state="closed"]': { backgroundColor: vars.colors.indigo3 },
-    '&[data-state="open"]': { backgroundColor: vars.colors.indigo4 },
+    '&[data-state="closed"]': { backgroundColor: vars.colors.indigo5 },
+    '&[data-state="open"]': { backgroundColor: vars.colors.indigo6 },
     '&:hover': { backgroundColor: vars.colors.mauve7 }
   }
 })

@@ -15,15 +15,22 @@ export const gridItem = styleVariants({
     {
       gridColumn: '1 / span 4',
       gridRow: '2 / span 1',
-      paddingX: 2,
       '@media': {
         [vars.screens.tablet]: {
           gridColumn: '1 / span 2',
-          gridRow: '2 / span 2',
-          paddingX: 6
+          gridRow: '2 / span 2'
         }
       }
-    }
+    },
+    sprinkles({
+      borderRadius: 2,
+      marginX: 'auto',
+      paddingX: {
+        mobile: 2,
+        tablet: 6
+      },
+      width: '80%'
+    })
   ],
   bioRight: [
     gridItemBase,
@@ -41,10 +48,17 @@ export const gridItem = styleVariants({
       }
     }
   ],
-  bottom: {
-    gridColumn: '1 / span 4',
-    gridRow: '4 / 4'
-  }
+  bottom: [
+    {
+      gridColumn: '1 / span 4',
+      gridRow: '4 / 4'
+    },
+    sprinkles({
+      padding: 4,
+      display: 'flex',
+      justifyContent: 'center'
+    })
+  ]
 })
 
 export const bioLeftInner = style([

@@ -1,7 +1,7 @@
 import { Layout } from '@/components/Layout/Layout'
 import { Box, Heading } from '@/components/primitives'
 import { PersonIcon } from '@radix-ui/react-icons'
-import { BioAccordion } from '@/components/SethiBio'
+import { SethiBio } from '@/components/SethiBio'
 import { sprinkles } from '@/styles'
 import * as styles from './about.css'
 
@@ -31,7 +31,7 @@ export default function AboutPage(props: Props) {
             </div>
           </div>
           <div className={styles.gridItem['bioRight']}>
-            <BioAccordion />
+            <SethiBio />
           </div>
           <div className={styles.gridItem['bottom']}>4</div>
         </div>

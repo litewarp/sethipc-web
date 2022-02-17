@@ -1,13 +1,13 @@
 import { sprinkles, vars } from '@/styles'
 import { style, styleVariants } from '@vanilla-extract/css'
 
-export const form = style([
-  {
-    all: 'unset',
-    width: '100%'
-  },
-  sprinkles({ display: 'flex', flexDirection: 'column', gap: vars.space[3] })
-])
+export const form = sprinkles({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: vars.space[3],
+  all: 'unset',
+  width: '100%'
+})
 
 const errorMessageBase = style({
   lineHeight: 1,
@@ -22,19 +22,8 @@ export const errorMessage = styleVariants({
 
 export const submitButton = style([
   {
-    all: 'unset',
-    display: 'inline-flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 4,
-    padding: '0 15px',
-    fontSize: 15,
-    lineHeight: 1,
-    fontWeight: 500,
     height: 35,
     width: 150,
-    backgroundColor: vars.colors.indigo4,
-    color: vars.colors.indigo11,
     boxShadow: `0 2px 10px ${vars.colors.blackA7}`,
     selectors: {
       '&:hover': { backgroundColor: vars.colors.indigo5 },
@@ -42,13 +31,21 @@ export const submitButton = style([
     }
   },
   sprinkles({
+    all: 'unset',
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
     marginLeft: 'auto',
     marginRight: {
       tablet: 7
-    }
+    },
+    paddingX: 3,
+    fontSize: 3,
+    lineHeight: '20px',
+    fontWeight: 500,
+    borderRadius: 1,
+    bg: vars.colors.indigo4,
+    color: vars.colors.indigo11
   })
 ])
 

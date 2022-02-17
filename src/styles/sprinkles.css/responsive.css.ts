@@ -15,7 +15,9 @@ export const responsive = defineProperties({
   },
   defaultCondition: 'mobile',
   properties: {
+    all: ['unset', 'inherit'],
     boxSizing: ['border-box'],
+    borderRadius: vars.radii,
     gap: vars.space,
     gapY: vars.space,
     gapX: vars.space,
