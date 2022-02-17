@@ -27,48 +27,48 @@ export const button = recipe({
   variants: {
     color: {
       gray: {
-        backgroundColor: '$slate4',
-        color: '$slate11',
+        backgroundColor: vars.colors.slate4,
+        color: vars.colors.slate11,
         selectors: {
           '&:hover': {
-            backgroundColor: '$slate5'
+            backgroundColor: vars.colors.slate5
           },
           '&:active': {
-            backgroundColor: '$slate6'
+            backgroundColor: vars.colors.slate6
           },
           '&:focus': {
-            boxShadow: '0 0 0 1px $colors$slate8, inset 0 0 0 1px $colors$slate8'
+            boxShadow: `0 0 0 1px ${vars.colors.slate8}, inset 0 0 0 1px ${vars.colors.slate8}`
           }
         }
       },
       grass: {
-        backgroundColor: '$grass4',
-        color: '$grass11',
+        backgroundColor: vars.colors.grass8,
+        color: vars.colors.grass11,
         selectors: {
           '&:hover': {
-            backgroundColor: '$grass5'
+            backgroundColor: vars.colors.grass5
           },
           '&:active': {
-            backgroundColor: '$grass6'
+            backgroundColor: vars.colors.grass6
           },
           '&:focus': {
-            boxShadow: '0 0 0 1px $colors$grass8, inset 0 0 0 1px $colors$grass8'
+            boxShadow: `0 0 0 1px ${vars.colors.grass8}, inset 0 0 0 1px ${vars.colors.grass8}`
           }
         }
       },
 
       indigo: {
-        backgroundColor: '$indigo4',
-        color: '$indigo11',
+        backgroundColor: vars.colors.indigo8,
+        color: vars.colors.indigo11,
         selectors: {
           '&:hover': {
-            backgroundColor: '$indigo5'
+            backgroundColor: vars.colors.indigo5
           },
           '&:active': {
-            backgroundColor: '$indigo6'
+            backgroundColor: vars.colors.indigo6
           },
           '&:focus': {
-            boxShadow: '0 0 0 1px $colors$indigo8, inset 0 0 0 1px $colors$indigo8'
+            boxShadow: `0 0 0 1px ${vars.colors.indigo8}, inset 0 0 0 1px ${vars.colors.indigo8}`
           }
         }
       }

@@ -4,8 +4,29 @@
 import React from 'react'
 import cx from 'clsx'
 import { Slot } from '@radix-ui/react-slot'
-import { sprinkles, isSprinklesProp, getSprinklesProps } from '@/styles'
+import { sprinkles, Sprinkles } from '@/styles'
 import { PrimitiveForwardRefComponent, PrimitivePropsWithRef } from './types'
+
+export function isSprinklesProp(key: string): key is keyof Sprinkles {
+  return sprinkles.properties.has(key as keyof Sprinkles)
+}
+
+export function getSprinklesProps<T extends { [key: string]: any }>(props: T) {
+  const sprinklesProps: { [key: string]: unknown } = {}
+  const nativeProps: { [key: string]: unknown } = {}
+
+  for (const key in props) {
+    if (isSprinklesProp(key)) {
+      sprinklesProps[key] = props[key as keyof typeof props]
+    } else {
+      nativeProps[key] = props[key as keyof typeof props]
+    }
+  }
+  return {
+    sprinklesProps,
+    nativeProps
+  }
+}
 
 export const NODES = [
   'a',
