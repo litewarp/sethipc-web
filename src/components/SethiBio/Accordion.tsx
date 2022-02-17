@@ -1,100 +1,8 @@
 import React from 'react'
-import { styled, keyframes } from '@stitches/react'
 import { violet, blackA, mauve } from '@radix-ui/colors'
 import { ChevronDownIcon } from '@radix-ui/react-icons'
 import * as AccordionPrimitive from '@radix-ui/react-accordion'
-import { Box } from '../primitives'
-
-const slideDown = keyframes({
-  from: { height: 0 },
-  to: { height: 'var(--radix-accordion-content-height)' }
-})
-
-const slideUp = keyframes({
-  from: { height: 'var(--radix-accordion-content-height)' },
-  to: { height: 0 }
-})
-
-const StyledAccordion = styled(AccordionPrimitive.Root, {
-  borderRadius: 6,
-  width: '100%',
-  boxShadow: `0 2px 10px ${blackA.blackA4}`
-})
-
-const StyledItem = styled(AccordionPrimitive.Item, {
-  overflow: 'hidden',
-  marginTop: 1,
-
-  '&:first-child': {
-    marginTop: 0,
-    borderTopLeftRadius: 4,
-    borderTopRightRadius: 4
-  },
-
-  '&:last-child': {
-    borderBottomLeftRadius: 4,
-    borderBottomRightRadius: 4
-  },
-
-  '&:focus-within': {
-    position: 'relative',
-    zIndex: 1,
-    boxShadow: `0 0 0 2px $colors$mauve11`
-  }
-})
-
-const StyledHeader = styled(AccordionPrimitive.Header, {
-  all: 'unset',
-  display: 'flex'
-})
-
-const StyledTrigger = styled(AccordionPrimitive.Trigger, {
-  all: 'unset',
-  fontFamily: 'inherit',
-  backgroundColor: 'transparent',
-  padding: '0 20px',
-  height: 45,
-  flex: 1,
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'space-between',
-  fontSize: 15,
-  lineHeight: 1,
-  fontWeight: 600,
-  color: '$primaryText',
-  boxShadow: `0 1px 0 ${mauve.mauve6}`,
-  '&[data-state="closed"]': { backgroundColor: '$indigo3' },
-  '&[data-state="open"]': { backgroundColor: '$indigo4' },
-  '&:hover': { backgroundColor: '$mauve7' }
-})
-
-const StyledContent = styled(AccordionPrimitive.Content, {
-  overflow: 'hidden',
-  fontSize: 15,
-  color: '$primaryText',
-  backgroundColor: '$tertiaryBg',
-
-  '&[data-state="open"]': {
-    animation: `${slideDown} 300ms cubic-bezier(0.87, 0, 0.13, 1)`
-  },
-  '&[data-state="closed"]': {
-    animation: `${slideUp} 300ms cubic-bezier(0.87, 0, 0.13, 1)`
-  }
-})
-
-const StyledContentText = styled('div', {
-  padding: '15px 20px'
-})
-
-const StyledChevron = styled(ChevronDownIcon, {
-  color: violet.violet10,
-  transition: 'transform 300ms cubic-bezier(0.87, 0, 0.13, 1)',
-  '[data-state=open] &': { transform: 'rotate(180deg)' }
-})
-
-// Exports
-export const Accordion = StyledAccordion
-export const AccordionItem = StyledItem
+import * as styles from './Accordion.css'
 
 type AccordionTriggerProps = {
   children: React.ReactNode
@@ -104,14 +12,14 @@ export const AccordionTrigger = React.forwardRef<
   HTMLButtonElement,
   AccordionTriggerProps
 >(({ children, ...props }, forwardedRef) => (
-  <StyledHeader>
-    <StyledTrigger {...props} ref={forwardedRef}>
+  <AccordionPrimitive.Header className={styles.header}>
+    <AccordionPrimitive.Trigger className={styles.trigger} {...props} ref={forwardedRef}>
       <>
         {children}
-        <StyledChevron aria-hidden />
+        <ChevronDownIcon aria-hidden className={styles.icon} />
       </>
-    </StyledTrigger>
-  </StyledHeader>
+    </AccordionPrimitive.Trigger>
+  </AccordionPrimitive.Header>
 ))
 AccordionTrigger.displayName = 'AccordionTrigger'
 
@@ -121,9 +29,9 @@ type AccordionContentProps = {
 
 export const AccordionContent = React.forwardRef<HTMLDivElement, AccordionContentProps>(
   ({ children, ...props }, forwardedRef) => (
-    <StyledContent {...props} ref={forwardedRef}>
-      <StyledContentText>{children}</StyledContentText>
-    </StyledContent>
+    <AccordionPrimitive.Content className={styles.content} {...props} ref={forwardedRef}>
+      <div className={styles.text}>{children}</div>
+    </AccordionPrimitive.Content>
   )
 )
 AccordionContent.displayName = 'AccordionContent'
@@ -131,27 +39,32 @@ AccordionContent.displayName = 'AccordionContent'
 // Your app...
 export function BioAccordion() {
   return (
-    <Accordion type="single" defaultValue="item-1" collapsible>
-      <AccordionItem value="item-1">
+    <AccordionPrimitive.Root
+      type="single"
+      defaultValue="item-1"
+      collapsible
+      className={styles.root}
+    >
+      <AccordionPrimitive.Item value="item-1" className={styles.item}>
         <AccordionTrigger>Is it accessible?</AccordionTrigger>
         <AccordionContent>
           Yes. It adheres to the WAI-ARAI design pattern.
         </AccordionContent>
-      </AccordionItem>
+      </AccordionPrimitive.Item>
 
-      <AccordionItem value="item-2">
+      <AccordionPrimitive.Item value="item-2" className={styles.item}>
         <AccordionTrigger>Is it unstyled?</AccordionTrigger>
         <AccordionContent>
-          Yes. It's unstyled by default, giving you freedom over the look and feel.
+          Yes. It&apos;s unstyled by default, giving you freedom over the look and feel.
         </AccordionContent>
-      </AccordionItem>
+      </AccordionPrimitive.Item>
 
-      <AccordionItem value="item-3">
+      <AccordionPrimitive.Item value="item-3" className={styles.item}>
         <AccordionTrigger>Can it be animated?</AccordionTrigger>
         <AccordionContent>
           Yes! You can animate the Accordion with CSS or JavaScript.
         </AccordionContent>
-      </AccordionItem>
-    </Accordion>
+      </AccordionPrimitive.Item>
+    </AccordionPrimitive.Root>
   )
 }

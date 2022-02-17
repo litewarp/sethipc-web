@@ -1,7 +1,7 @@
 import { style, styleVariants } from '@vanilla-extract/css'
 import { sprinkles } from '@/styles'
 
-const sectionBase = style({
+export const sectionBase = style({
   boxSizing: 'border-box',
   flexShrink: 0,
   selectors: {

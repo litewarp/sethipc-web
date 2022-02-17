@@ -11,7 +11,7 @@ export const responsive = defineProperties({
   properties: {
     boxSizing: ['border-box'],
     gap: vars.space,
-    display: ['none', 'flex', 'block', 'inline-block', 'inline-flex'],
+    display: ['none', 'flex', 'block', 'inline-block', 'inline-flex', 'grid'],
     flexDirection: ['row', 'column'],
     justifyContent: [
       'stretch',
@@ -33,7 +33,9 @@ export const responsive = defineProperties({
     marginBottom: vars.space,
     maxWidth: ['430px', '715px', '1145px', 'none'],
     position: ['static', 'relative', 'absolute', 'fixed', 'sticky'],
-    width: ['10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%']
+    width: ['10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%'],
+    gridTemplateRows: vars.grid,
+    gridTemplateColumns: vars.grid
   },
   shorthands: {
     padding: ['paddingTop', 'paddingBottom', 'paddingLeft', 'paddingRight'],
@@ -42,6 +44,8 @@ export const responsive = defineProperties({
     margin: ['marginTop', 'marginBottom', 'marginLeft', 'marginRight'],
     marginX: ['marginLeft', 'marginRight'],
     marginY: ['marginTop', 'marginBottom'],
-    placeItems: ['justifyContent', 'alignItems']
+    placeItems: ['justifyContent', 'alignItems'],
+    gridRows: ['gridTemplateRows'],
+    gridColumns: ['gridTemplateColumns']
   }
 })

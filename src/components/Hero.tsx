@@ -5,6 +5,7 @@ import { Box, Heading } from './primitives'
 import NextLink from 'next/link'
 import { ExternalIcon } from './ExternalIcon'
 import { sprinkles } from '@/styles'
+import * as styles from './Hero.css'
 
 interface HeroProps {
   title: string
@@ -13,10 +14,7 @@ interface HeroProps {
 
 export function Hero(props: HeroProps) {
   return (
-    <Section
-      size={{ '@initial': '2', '@bp1': '3' }}
-      css={{ pt: '$3', '@bp2': { pt: '$6' } }}
-    >
+    <section className={styles.heroSection}>
       <div
         className={sprinkles({
           display: 'block',
@@ -62,6 +60,6 @@ export function Hero(props: HeroProps) {
           </NextLink>
         </div>
       </div>
-    </Section>
+    </section>
   )
 }
