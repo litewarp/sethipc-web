@@ -2,6 +2,7 @@ import { createGlobalTheme, createTheme, style } from '@vanilla-extract/css'
 import { colors } from './colors.css'
 
 const root = createGlobalTheme(':root', {
+  border: {},
   grid: {
     1: 'repeat(1, minmax(0, 1fr))',
     2: 'repeat(2, minmax(0, 1fr))',
