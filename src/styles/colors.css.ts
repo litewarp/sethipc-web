@@ -1,9 +1,7 @@
-import { createThemeContract, createTheme } from '@vanilla-extract/css'
+import { createGlobalThemeContract, createGlobalTheme } from '@vanilla-extract/css'
 import * as r from '@radix-ui/colors'
-import { NullableTokens } from '@vanilla-extract/css/dist/declarations/src/types'
 
-// exdclude [Color]A variants for now
-export const [lightTheme, colors] = createTheme({
+const lightColors = {
   hiContrast: r.slate.slate12,
   loContrast: 'white',
   canvas: 'hsl(0 0% 93%)',
@@ -20,6 +18,8 @@ export const [lightTheme, colors] = createTheme({
   ...r.amber,
   // ...r.amberA,
   ...r.blackA,
+  ...r.blue,
+  // ...r.blueA,
   ...r.brown,
   // ...r.brownA,
   ...r.bronze,
@@ -73,9 +73,9 @@ export const [lightTheme, colors] = createTheme({
   // ...r.violetA,
   ...r.yellow
   // ...r.yellowA
-})
+}
 
-export const darkTheme = createTheme(colors, {
+const darkColors = {
   hiContrast: r.slateDark.slate12,
   loContrast: r.slateDark.slate1,
   canvas: 'hsl(0 0% 15%)',
@@ -92,6 +92,8 @@ export const darkTheme = createTheme(colors, {
   ...r.amberDark,
   // ...r.amberDarkA,
   ...r.blackA,
+  ...r.blueDark,
+  // ...r.blueDarkA,
   ...r.brownDark,
   // ...r.brownDarkA,
   ...r.bronzeDark,
@@ -145,4 +147,10 @@ export const darkTheme = createTheme(colors, {
   // ...r.violetDarkA,
   ...r.yellowDark
   // ...r.yellowDarkA
-})
+}
+
+export const colors = createGlobalThemeContract(lightColors)
+
+createGlobalTheme('[data-theme="light"]', lightColors)
+
+createGlobalTheme('[data-theme="dark"]', colors, darkColors)

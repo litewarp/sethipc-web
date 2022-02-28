@@ -1,50 +1,49 @@
-import React, { ReactNode } from 'react'
-import * as styles from './Heading.css'
-import { getSprinklesProps } from '@/components/primitives'
+import * as React from 'react'
 
-const DEFAULT_TAG = 'h1'
+import { Box, BoxProps } from '../Box'
+import * as styles from './styles.css'
 
-type PrimitiveProps = React.HTMLProps<HTMLHeadingElement> & {
-  children: ReactNode
-} & styles.HeadingVariants
+const resolveDefaultComponent = {
+  '1': 'h1',
+  '2': 'h2'
+} as const
 
-const components = {
-  h1: function ({ children, size, ...props }: PrimitiveProps) {
-    return (
-      <h1 className={styles.heading({ size })} {...props}>
-        {children}
-      </h1>
-    )
-  },
-  h2: function ({ children, size, ...props }: PrimitiveProps) {
-    return (
-      <h2 className={styles.heading({ size })} {...props}>
-        {children}
-      </h2>
-    )
-  },
-  h3: function ({ children, size, ...props }: PrimitiveProps) {
-    return (
-      <h3 className={styles.heading({ size })} {...props}>
-        {children}
-      </h3>
-    )
-  },
-  h4: function ({ children, size, ...props }: PrimitiveProps) {
-    return (
-      <h4 className={styles.heading({ size })} {...props}>
-        {children}
-      </h4>
-    )
-  }
-}
+type Props = {
+  align?: BoxProps['textAlign']
+  fontFamily?: BoxProps['fontFamily']
+  as?: 'div' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'legend'
+  children?: React.ReactNode
+  color?: BoxProps['color']
+  id?: string
+  transform?: BoxProps['textTransform']
+  responsive?: boolean
+} & styles.Variants
 
-type Props = PrimitiveProps & {
-  as?: 'h1' | 'h2' | 'h3' | 'h4'
-}
-
-export function Heading(props: Props) {
-  const { as = 'h1', children, ...rest } = props
-  const Component = components[as]
-  return <Component {...rest}>{children}</Component>
+export const Heading = ({
+  align,
+  as,
+  children,
+  color = 'secondary',
+  id,
+  fontFamily = 'default',
+  level = '2',
+  responsive,
+  transform
+}: Props) => {
+  return (
+    <Box
+      as={as ?? resolveDefaultComponent[level]}
+      className={styles.variants({
+        level,
+        responsive
+      })}
+      color={color}
+      fontFamily={fontFamily}
+      id={id}
+      textAlign={align}
+      textTransform={transform}
+    >
+      {children}
+    </Box>
+  )
 }

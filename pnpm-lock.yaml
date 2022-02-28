@@ -1,6 +1,8 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@capsizecss/core': ^3.0.0
+  '@capsizecss/vanilla-extract': ^1.0.0
   '@jest-mock/express': ^1.4.5
   '@radix-ui/colors': ^0.1.8
   '@radix-ui/react-accordion': 0.1.6-rc.17
@@ -29,6 +31,7 @@ specifiers:
   '@vanilla-extract/sprinkles': ^1.3.3
   clsx: ^1.1.1
   csurf: ^1.11.0
+  dedent: ^0.7.0
   deepmerge: ^4.2.2
   eslint: 8.8.0
   eslint-config-next: 12.0.10
@@ -77,6 +80,8 @@ dependencies:
   zustand: 3.7.0_e040877ec44a2dfd6ce0679c5517605d
 
 devDependencies:
+  '@capsizecss/core': 3.0.0
+  '@capsizecss/vanilla-extract': 1.0.0_@vanilla-extract+css@1.6.8
   '@jest-mock/express': 1.4.5
   '@sendgrid/mail': 7.6.1
   '@testing-library/jest-dom': 5.16.2
@@ -89,6 +94,7 @@ devDependencies:
   '@vanilla-extract/babel-plugin': 1.1.4
   '@vanilla-extract/css-utils': 0.1.2
   csurf: 1.11.0
+  dedent: 0.7.0
   deepmerge: 4.2.2
   eslint: 8.8.0
   eslint-config-next: 12.0.10_9534215cc73b6f260bf33f1b86e3ae0e
@@ -442,6 +448,19 @@ packages:
 
   /@bcoe/v8-coverage/0.2.3:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
+    dev: true
+
+  /@capsizecss/core/3.0.0:
+    resolution: {integrity: sha512-tJNEWMmhHcU5z6ITAiVNN9z+PCTylybVIJqgX7Ts4zN66fe/W2Fe5UWJCCZIP/5uutsl5fYOaVVHZIjsuTVhBQ==}
+    dev: true
+
+  /@capsizecss/vanilla-extract/1.0.0_@vanilla-extract+css@1.6.8:
+    resolution: {integrity: sha512-/cY34CgCAmuf6SmpgPXmDJaIdJOaRe37MsoeZIeZme4k0F0HFts+poTxq4m8UtBH7LRxpUkfUHDoRO9OYjjVBg==}
+    peerDependencies:
+      '@vanilla-extract/css': ^1.2.1
+    dependencies:
+      '@capsizecss/core': 3.0.0
+      '@vanilla-extract/css': 1.6.8
     dev: true
 
   /@emotion/hash/0.8.0:
