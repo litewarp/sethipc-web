@@ -84,90 +84,57 @@ export const grid = recipe({
       }
     },
     gap: {
+      px: '1px',
       1: {
-        gap: vars.space[1]
+        gap: '.25rem'
       },
       2: {
-        gap: vars.space[2]
+        gap: '.5rem'
       },
       3: {
-        gap: vars.space[3]
+        gap: '.75rem'
       },
       4: {
-        gap: vars.space[4]
+        gap: '1rem'
       },
       5: {
-        gap: vars.space[5]
-      },
-      6: {
-        gap: vars.space[6]
-      },
-      7: {
-        gap: vars.space[7]
-      },
-      8: {
-        gap: vars.space[8]
-      },
-      9: {
-        gap: vars.space[9]
+        gap: '1.25rem'
       }
     },
     gapX: {
+      px: '1px',
       1: {
-        columnGap: vars.space[1]
+        gap: '.25rem'
       },
       2: {
-        columnGap: vars.space[2]
+        gap: '.5rem'
       },
       3: {
-        columnGap: vars.space[3]
+        gap: '.75rem'
       },
       4: {
-        columnGap: vars.space[4]
+        gap: '1rem'
       },
       5: {
-        columnGap: vars.space[5]
-      },
-      6: {
-        columnGap: vars.space[6]
-      },
-      7: {
-        columnGap: vars.space[7]
-      },
-      8: {
-        columnGap: vars.space[8]
-      },
-      9: {
-        columnGap: vars.space[9]
+        gap: '1.25rem'
       }
     },
     gapY: {
+      px: '1px',
       1: {
-        rowGap: vars.space[1]
+        gap: '.25rem'
       },
       2: {
-        rowGap: vars.space[2]
+        gap: '.5rem'
       },
       3: {
-        rowGap: vars.space[3]
+        gap: '.75rem'
       },
       4: {
-        rowGap: vars.space[4]
+        gap: '1rem'
       },
       5: {
-        rowGap: vars.space[5]
-      },
-      6: {
-        rowGap: vars.space[6]
-      },
-      7: {
-        rowGap: vars.space[7]
-      },
-      8: {
-        rowGap: vars.space[8]
-      },
-      9: {
-        rowGap: vars.space[9]
+        gap: '1.25rem'
       }
     }
   }

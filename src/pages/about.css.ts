@@ -1,4 +1,5 @@
 import { sprinkles, vars } from '@/styles'
+import { responsiveStyle } from '@/styles/responsiveStyle'
 import { style, styleVariants } from '@vanilla-extract/css'
 
 export const gridItemBase = style({
@@ -13,21 +14,22 @@ export const gridItem = styleVariants({
   bioLeft: [
     gridItemBase,
     {
-      gridColumn: '1 / span 4',
-      gridRow: '2 / span 1',
-      '@media': {
-        [vars.screens.tablet]: {
+      ...responsiveStyle({
+        mobile: {
+          gridColumn: '1 / span 4'
+        },
+        tablet: {
           gridColumn: '1 / span 2',
           gridRow: '2 / span 2'
         }
-      }
+      })
     },
     sprinkles({
-      borderRadius: 2,
+      borderRadius: 'md',
       marginX: 'auto',
       paddingX: {
-        mobile: 2,
-        tablet: 6
+        mobile: 'sm',
+        tablet: 'lg'
       },
       width: '80%'
     })
@@ -35,17 +37,21 @@ export const gridItem = styleVariants({
   bioRight: [
     gridItemBase,
     {
-      gridColumn: '1 / span 4',
-      gridRow: '3 / span 1',
-      paddingX: 2,
       alignItems: 'start',
-      '@media': {
-        [vars.screens.tablet]: {
+      ...responsiveStyle({
+        mobile: {
+          gridColumn: '1 / span 4',
+          gridRow: '3 / span 1',
+          paddingLeft: 'sm',
+          paddingRight: 'sm'
+        },
+        tablet: {
           gridColumn: '3 / span 2',
           gridRow: '2 / 4',
-          paddingX: 6
+          paddingRight: 'lg',
+          paddingLeft: 'lg'
         }
-      }
+      })
     }
   ],
   bottom: [
@@ -54,7 +60,7 @@ export const gridItem = styleVariants({
       gridRow: '4 / 4'
     },
     sprinkles({
-      padding: 4,
+      padding: 'md',
       display: 'flex',
       justifyContent: 'center'
     })
@@ -75,3 +81,10 @@ export const bioLeftInner = style([
     alignItems: 'center'
   })
 ])
+
+export const grid = style({
+  display: 'grid',
+  gridTemplateRows: 'repeat(4, minmax(0, 1fr))',
+  gridTemplateColumns: 'repeat(4, minmax(4, 1fr))',
+  gap: '.5em'
+})

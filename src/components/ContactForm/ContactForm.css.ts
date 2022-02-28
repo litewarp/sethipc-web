@@ -1,13 +1,17 @@
 import { sprinkles, vars } from '@/styles'
 import { style, styleVariants } from '@vanilla-extract/css'
 
-export const form = sprinkles({
-  display: 'flex',
-  flexDirection: 'column',
-  gap: vars.space[3],
-  all: 'unset',
-  width: '100%'
-})
+export const form = style([
+  sprinkles({
+    display: 'flex',
+    flexDirection: 'column',
+    width: '100%'
+  }),
+  {
+    all: 'unset',
+    rowGap: '.75rem'
+  }
+])
 
 const errorMessageBase = style({
   lineHeight: 1,
@@ -31,21 +35,20 @@ export const submitButton = style([
     }
   },
   sprinkles({
-    all: 'unset',
-    display: 'inline-flex',
+    display: 'inlineFlex',
     alignItems: 'center',
     justifyContent: 'center',
     marginLeft: 'auto',
     marginRight: {
-      tablet: 7
+      tablet: 'xl'
     },
-    paddingX: 3,
-    fontSize: 3,
-    lineHeight: '20px',
-    fontWeight: 500,
-    borderRadius: 1,
-    bg: vars.colors.indigo4,
-    color: vars.colors.indigo11
+    paddingX: 'md',
+    fontSize: 'base',
+    lineHeight: 'base',
+    fontWeight: 'normal',
+    borderRadius: 'sm',
+    backgroundColor: 'promoteLight',
+    color: 'promote'
   })
 ])
 

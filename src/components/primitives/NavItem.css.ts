@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css'
 import { recipe, RecipeVariants } from '@vanilla-extract/recipes'
-import { sprinkles, vars } from '@/styles'
+import { atoms, vars } from '@/styles'
 
 export const navAnchor = recipe({
   base: [
@@ -18,11 +18,11 @@ export const navAnchor = recipe({
       },
       textDecoration: 'none'
     },
-    sprinkles({
+    atoms({
       display: 'flex',
       alignItems: 'center',
-      paddingY: 2,
-      paddingX: 5
+      paddingY: 'sm',
+      paddingX: 'lg'
     })
   ],
   variants: {

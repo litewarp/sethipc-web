@@ -1,36 +1,41 @@
 import { sprinkles, vars } from '@/styles'
+import { responsiveStyle } from '@/styles/responsiveStyle'
 import { style } from '@vanilla-extract/css'
 
 export const container = sprinkles({
   display: 'block',
-  maxWidth: '1145px',
+  maxWidth: 'large',
   paddingY: {
-    mobile: 7,
-    tablet: 8
+    mobile: 'xl',
+    tablet: 'xxl'
   },
   paddingX: {
-    mobile: 3,
-    tablet: 6
+    mobile: 'sm',
+    tablet: 'lg'
   }
 })
 
-export const logosContainer = sprinkles({
-  display: 'grid',
-  marginTop: {
-    mobile: 5,
-    desktop: 6
-  },
-  gap: 1,
-  gridRows: {
-    mobile: 2,
-    tablet: 3
+export const logosContainer = style([
+  {
+    display: 'grid',
+    gap: 1,
+    ...responsiveStyle({
+      mobile: {
+        marginTop: vars.space.lg,
+        gridTemplateRows: 'repeat(2, minmax(0, 1fr))'
+      },
+      tablet: {
+        marginTop: vars.space.xl,
+        gridTemplateRows: 'repeat(3, minmax(0, 1fr))'
+      }
+    })
   }
-})
+])
 
 export const logo = style([
   sprinkles({
     display: 'flex',
-    padding: 4
+    padding: 'md'
   }),
   {
     backgroundColor: vars.colors.slate2,

@@ -13,15 +13,15 @@ export const button = recipe({
       lineHeight: 1,
       fontWeight: 600,
       textDecoration: 'none',
-      fontSize: vars.fontSizes[3],
+      fontSize: vars.fontSize.base,
       height: vars.sizes[6],
       transition: 'background-color 75ms ease',
       userSelect: 'none'
     },
     sprinkles({
-      display: 'inline-flex',
+      display: 'inlineFlex',
       alignItems: 'center',
-      paddingX: 3
+      paddingX: 'sm'
     })
   ],
   variants: {

@@ -1,5 +1,5 @@
 import { style, styleVariants } from '@vanilla-extract/css'
-import { sprinkles } from '@/styles'
+import { atoms } from '@/styles'
 import { recipe, RecipeVariants } from '@vanilla-extract/recipes'
 
 export const sectionBase = style({
@@ -21,9 +21,9 @@ export const section = recipe({
   base: sectionBase,
   variants: {
     size: {
-      1: sprinkles({ paddingY: 3 }),
-      2: sprinkles({ paddingY: 5 }),
-      3: sprinkles({ paddingY: 9 })
+      1: atoms({ paddingY: 'md' }),
+      2: atoms({ paddingY: 'lg' }),
+      3: atoms({ paddingY: 'xl' })
     }
   },
   defaultVariants: {

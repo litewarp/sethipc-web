@@ -1,19 +1,9 @@
 import { createGlobalTheme, createTheme, style } from '@vanilla-extract/css'
 import { colors } from './colors.css'
 import { mapValues } from 'lodash'
-import { fontSizeToCapHeight } from './typography'
 
 const fontFamily =
   '-apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'
-
-// change based on font
-const fontMetrics = {
-  capHeight: 1443,
-  ascent: 1950,
-  descent: -494,
-  lineGap: 0,
-  unitsPerEm: 2048
-}
 
 const root = createGlobalTheme(':root', {
   borderRadius: {

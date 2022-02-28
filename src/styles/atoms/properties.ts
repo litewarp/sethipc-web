@@ -21,7 +21,8 @@ export const negativeSpace = {
 
 const margin = {
   ...space,
-  ...negativeSpace
+  ...negativeSpace,
+  auto: 'auto'
 }
 
 const boxShadow = {
@@ -63,19 +64,23 @@ export const pseudoProperties = {
 
 export type PseudoProperties = keyof typeof pseudoProperties
 
-const tenths = [
-  '0%',
-  '10%',
-  '20%',
-  '30%',
-  '40%',
-  '50%',
-  '60%',
-  '70%',
-  '80%',
-  '90%',
-  '100%'
-]
+const tenths = {
+  '0%': '0%',
+  '10%': '10%',
+  '20%': '20%',
+  '30%': '30%',
+  '40%': '40%',
+  '50%': '50%',
+  '60%': '60%',
+  '70%': '70%',
+  '80%': '80%',
+  '90%': '90%',
+  '100%': '100%'
+}
+
+const sizes = {
+  ...tenths
+}
 
 export const unresponsiveProperties = {
   overflow: ['hidden', 'scroll', 'visible', 'auto'],
@@ -101,8 +106,8 @@ export const unresponsiveProperties = {
   bottom: [0],
   left: [0],
   right: [0],
-  height: vars.sizes,
-  width: vars.sizes,
+  // height: sizes,
+  // width: sizes,
   minWidth: {
     0: '0%'
   },
@@ -129,6 +134,7 @@ export const responsiveProperties = {
     none: 'none',
     block: 'block',
     inline: 'inline',
+    inlineFlex: 'inline-flex',
     inlineBlock: 'inline-block',
     flex: 'flex'
   },
@@ -177,8 +183,8 @@ export const responsiveProperties = {
   letterSpacing: vars.letterSpacing,
   fontWeight: vars.fontWeight,
   lineHeight: vars.lineHeight,
-  height: [...tenths, '100vh'],
-  width: [...tenths, '100vw'],
+  height: { ...tenths, screen: '100vh' },
+  width: { ...tenths, screen: '100vw' },
   flexShrink: [0, 1],
   flexGrow: [0, 1],
   textAlign: ['left', 'center', 'right'],

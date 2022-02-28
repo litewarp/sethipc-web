@@ -3,7 +3,7 @@ import { HomePageAnchor, HomePageButton } from './HomePageButton'
 import { Box, Heading } from './primitives'
 import NextLink from 'next/link'
 import { ExternalIcon } from './ExternalIcon'
-import { sprinkles } from '@/styles'
+import { atoms } from '@/styles'
 import * as styles from './Hero.css'
 
 interface HeroProps {
@@ -15,38 +15,37 @@ export function Hero(props: HeroProps) {
   return (
     <section className={styles.heroSection}>
       <div
-        className={sprinkles({
+        className={atoms({
           display: 'block',
           flexShrink: 0,
           marginX: 'auto',
-          maxWidth: '1145px',
-          paddingX: 5
+          maxWidth: 'large',
+          paddingX: 'md'
         })}
       >
         <div className={styles.titleContainer}>
-          <Heading size={4}>{props.title}</Heading>
+          <Heading level="2">{props.title}</Heading>
         </div>
         <p
-          className={sprinkles({
-            fontSize: 4,
-            marginBottom: { mobile: 6, tablet: 7 },
+          className={atoms({
+            fontSize: 'lg',
+            marginBottom: { mobile: 'xl', tablet: 'xxl' },
             textAlign: { tablet: 'center' }
           })}
         >
           {props.subtitle}
         </p>
         <div
-          className={sprinkles({
+          className={atoms({
             display: 'flex',
             justifyContent: { tablet: 'center' },
-            marginY: { tablet: 7 },
-            gap: { tablet: 5 }
+            marginY: { tablet: 'lg' }
           })}
         >
           <NextLink href="/about" passHref>
             <HomePageAnchor color="indigo">
               Learn More
-              <span className={sprinkles({ marginLeft: 1 })}>
+              <span className={atoms({ marginLeft: 'xs' })}>
                 <ArrowRightIcon />
               </span>
             </HomePageAnchor>
@@ -54,7 +53,7 @@ export function Hero(props: HeroProps) {
           <NextLink href="/contact" passHref>
             <HomePageAnchor color="gray">
               Contact
-              <span className={sprinkles({ marginLeft: 2 })}>
+              <span className={atoms({ marginLeft: 'sm' })}>
                 <ExternalIcon />
               </span>
             </HomePageAnchor>

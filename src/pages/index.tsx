@@ -8,7 +8,7 @@ export default function HomePage() {
     <Layout>
       <div
         className={sprinkles({
-          paddingTop: 8
+          paddingTop: 'xl'
         })}
       >
         <Hero

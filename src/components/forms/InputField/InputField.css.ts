@@ -1,23 +1,33 @@
 import { vars, sprinkles } from '@/styles'
-import { style } from '@vanilla-extract/css'
+import { responsiveStyle } from '@/styles/responsiveStyle'
+import { globalStyle, style } from '@vanilla-extract/css'
 
-export const fieldset = sprinkles({
-  display: 'flex',
-  flexDirection: {
-    mobile: 'column',
-    tablet: 'row'
-  },
-  gap: {
-    mobile: 2,
-    tablet: 4
-  },
-  marginBottom: {
-    mobile: 2,
-    tablet: 3
-  },
-  alignItems: {
-    tablet: 'center'
-  }
+export const fieldset = style([
+  sprinkles({
+    display: 'flex',
+    flexDirection: {
+      mobile: 'column',
+      tablet: 'row'
+    },
+    marginBottom: {
+      mobile: 'sm',
+      tablet: 'md'
+    },
+    alignItems: {
+      tablet: 'center'
+    }
+  })
+])
+
+globalStyle(`.${fieldset}:not(:first-child) &`, {
+  ...responsiveStyle({
+    mobile: {
+      marginTop: vars.space.sm
+    },
+    tablet: {
+      marginTop: vars.space.md
+    }
+  })
 })
 
 export const label = style([

@@ -70,17 +70,17 @@ export const iconButton = recipe({
         borderWidth: 0,
         selectors: {
           '&:hover': {
-            backgroundColor: colors.slateA3
+            backgroundColor: colors.slate3
           },
           '&:focus': {
-            boxShadow: `inset 0 0 0 1px ${colors.slateA8}`
+            boxShadow: `inset 0 0 0 1px ${colors.slate8}`
           },
           '&:active': {
-            backgroundColor: colors.slateA4
+            backgroundColor: colors.slate4
           },
           '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]':
             {
-              backgroundColor: colors.slateA4
+              backgroundColor: colors.slate4
             }
         }
       },

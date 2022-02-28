@@ -1,13 +1,14 @@
 import { style, styleVariants } from '@vanilla-extract/css'
-import { sprinkles } from '@/styles'
+import { atoms } from '@/styles'
 
 const base = style([
-  sprinkles({ boxSizing: 'border-box', flexShrink: 0, marginX: 'auto', paddingX: 5 })
+  atoms({ boxSizing: 'border-box', flexShrink: 0, marginX: 'auto', paddingX: 'lg' })
 ])
 
 export const container = styleVariants({
-  1: [base, sprinkles({ maxWidth: '430px' })],
-  2: [base, sprinkles({ maxWidth: '715px' })],
-  3: [base, sprinkles({ maxWidth: '1145px' })],
-  4: [base, sprinkles({ maxWidth: 'none' })]
+  1: [base, atoms({ maxWidth: 'xsmall' })],
+  2: [base, atoms({ maxWidth: 'small' })],
+  3: [base, atoms({ maxWidth: 'medium' })],
+  4: [base, atoms({ maxWidth: 'large' })],
+  5: [base, { maxWidth: 'none' }]
 })

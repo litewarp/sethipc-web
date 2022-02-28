@@ -10,18 +10,10 @@ interface Props {}
 export default function AboutPage(props: Props) {
   return (
     <Layout>
-      <div className={sprinkles({ padding: 6 })}>
-        <div
-          className={sprinkles({
-            display: 'grid',
-            gapY: 1,
-            gapX: 1,
-            gridRows: 4,
-            gridColumns: 4
-          })}
-        >
+      <Box padding="lg">
+        <div className={styles.grid}>
           <div className={styles.gridItem['title']}>
-            <Heading size={3}>
+            <Heading level="2">
               Sethi P.C. is the Law and Consulting Firm of Nick Sethi
             </Heading>
           </div>
@@ -35,7 +27,7 @@ export default function AboutPage(props: Props) {
           </div>
           <div className={styles.gridItem['bottom']}>4</div>
         </div>
-      </div>
+      </Box>
     </Layout>
   )
 }

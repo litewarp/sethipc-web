@@ -1,5 +1,5 @@
 import { vars } from '@/styles'
-import { keyframes, style } from '@vanilla-extract/css'
+import { globalStyle, keyframes, style } from '@vanilla-extract/css'
 
 const slideDown = keyframes({
   from: { height: 0 },
@@ -94,4 +94,12 @@ export const icon = style({
       transform: 'rotate(180deg)'
     }
   }
+})
+export const educationItem = style({
+  display: 'flex',
+  alignItems: 'center'
+})
+
+globalStyle(`.${educationItem}:not(:first-child) &`, {
+  marginTop: '1.25rem'
 })

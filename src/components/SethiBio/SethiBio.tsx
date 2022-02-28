@@ -29,10 +29,7 @@ function Education() {
     <AccordionItem value="education" label="Education">
       <ul>
         {educationItems.map((ed) => (
-          <div
-            key={`${ed.institution}_${ed.date}`}
-            className={sprinkles({ display: 'flex', alignItems: 'center', gap: 3 })}
-          >
+          <div key={`${ed.institution}_${ed.date}`} className={styles.educationItem}>
             <p>{ed.date}</p>
             <p>{ed.degree}</p>
             <p>{ed.institution}</p>
@@ -73,10 +70,7 @@ function Credentials() {
     <AccordionItem value="credentials" label="Credentials">
       <ul>
         {credentialItems.map((cred) => (
-          <div
-            key={cred.title}
-            className={sprinkles({ display: 'flex', alignItems: 'center', gap: 3 })}
-          >
+          <div key={cred.title} className={styles.educationItem}>
             <p>{cred.date}</p>
             <p>{cred.title}</p>
             <p>{cred.institution}</p>

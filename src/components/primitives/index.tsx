@@ -1,6 +1,5 @@
 export * from './Box'
 export * from './Heading'
 export * from './IconButton'
-export * from './Primitive'
 export * from './Section'
 export * from './Separator'

@@ -1,19 +1,19 @@
-import { vars, sprinkles } from '@/styles'
+import { vars, atoms } from '@/styles'
 import { style } from '@vanilla-extract/css'
 
 export const footer = style([
-  sprinkles({
+  atoms({
     display: 'block',
     boxSizing: 'border-box',
-    paddingY: 4
+    paddingY: 'sm'
   })
 ])
 
-export const topDiv = sprinkles({
+export const topDiv = atoms({
   display: 'flex',
   boxSizing: 'border-box',
   justifyContent: 'center',
-  marginBottom: 4
+  marginBottom: 'lg'
 })
 
 export const separator = style({
@@ -25,24 +25,30 @@ export const separator = style({
 })
 
 export const container = style([
-  sprinkles({
+  atoms({
     boxSizing: 'border-box',
     marginLeft: 'auto',
     marginRight: 'auto',
-    paddingX: 5
+    paddingX: 'lg',
+    maxWidth: 'large'
+  })
+])
+
+export const containerInner = style([
+  atoms({
+    display: 'flex',
+    justifyContent: 'spaceBetween'
   }),
   {
-    maxWidth: 1145
+    gap: '3px'
   }
 ])
 
-export const containerInner = sprinkles({
-  display: 'flex',
-  gap: 3,
-  justifyContent: 'space-between'
-})
-
-export const logoContainer = sprinkles({
-  gap: 3,
-  display: 'flex'
-})
+export const logoContainer = style([
+  atoms({
+    display: 'flex'
+  }),
+  {
+    gap: 3
+  }
+])

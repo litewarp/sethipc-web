@@ -12,21 +12,19 @@ export const navOuterContainer = style({
   overflowX: 'hidden'
 })
 
-export const navInnerContainer = style([
-  sprinkles({
-    display: 'flex',
-    alignItems: 'center',
-    boxSizing: 'border-box',
-    paddingX: 4,
-    paddingY: {
-      mobile: 3,
-      tablet: 2
-    },
-    marginLeft: 'auto',
-    marginRight: 'auto'
-  }),
-  { maxWidth: 1145 }
-])
+export const navInnerContainer = sprinkles({
+  display: 'flex',
+  alignItems: 'center',
+  boxSizing: 'border-box',
+  paddingX: 'md',
+  paddingY: {
+    mobile: 'md',
+    tablet: 'sm'
+  },
+  marginLeft: 'auto',
+  marginRight: 'auto',
+  maxWidth: 'large'
+})
 
 export const logoContainer = style({
   boxShadow: 'border-box',
@@ -54,7 +52,7 @@ export const navItemsContainer = style([
   sprinkles({
     display: {
       mobile: 'none',
-      tablet: 'inline-flex'
+      tablet: 'inlineFlex'
     }
   }),
   { marginLeft: 'auto', gap: vars.sizes[3], marginRight: vars.sizes[3] }
@@ -65,16 +63,16 @@ export const themeToggle = style([
     display: 'block',
     marginLeft: {
       mobile: 'auto',
-      tablet: 0
+      tablet: 'none'
     }
   }),
   { width: 35 }
 ])
 
 export const iconButton = sprinkles({
-  marginLeft: 2,
+  marginLeft: 'sm',
   display: {
-    mobile: 'inline-block',
+    mobile: 'inlineBlock',
     tablet: 'none'
   }
 })
