@@ -1,5 +1,6 @@
-import { colors } from '../colors.css'
+import { vars } from '../vars.css'
 
+const { colors } = vars
 /**
  * Inspired by
  * https://seek-oss.github.io/braid-design-system/foundations/tones

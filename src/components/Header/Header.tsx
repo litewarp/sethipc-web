@@ -21,7 +21,7 @@ export function Header() {
           <NextLink href="/" passHref>
             <a className={styles.logoContainer}>
               <span className={styles.hiddenSpan}>SethiPC homepage</span>
-              <SethiPCLogo />
+              <SethiPCLogo size="4xl" />
             </a>
           </NextLink>
           <div className={styles.navItemsContainer}>

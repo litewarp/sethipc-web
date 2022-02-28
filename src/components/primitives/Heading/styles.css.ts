@@ -6,15 +6,21 @@ import { atoms } from '@/styles'
 const level = {
   '1': style([
     atoms({
-      fontSize: '5xl',
+      fontSize: '7xl',
       fontWeight: 'semiBold',
-      letterSpacing: 'tight'
-    }),
-    style({
-      lineHeight: '4rem'
+      letterSpacing: 'tight',
+      lineHeight: '7xl'
     })
   ]),
   '2': style([
+    atoms({
+      fontSize: '5xl',
+      fontWeight: 'semiBold',
+      letterSpacing: 'tight',
+      lineHeight: '5xl'
+    })
+  ]),
+  '3': style([
     atoms({
       fontSize: '3xl',
       fontWeight: 'semiBold',

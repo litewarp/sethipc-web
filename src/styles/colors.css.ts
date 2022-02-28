@@ -149,8 +149,6 @@ const darkColors = {
   // ...r.yellowDarkA
 }
 
-export const colors = createGlobalThemeContract(lightColors)
-
-createGlobalTheme('[data-theme="light"]', lightColors)
+export const colors = createGlobalTheme('[data-theme="light"]', lightColors)
 
 createGlobalTheme('[data-theme="dark"]', colors, darkColors)

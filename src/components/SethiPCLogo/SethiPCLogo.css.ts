@@ -21,7 +21,7 @@ export const logoText = recipe({
       lg: { fontSize: vars.fontSize.lg },
       xl: { fontSize: vars.fontSize.xl },
       ['3xl']: { fontSize: vars.fontSize['3xl'] },
-      ['5xl']: { fontSize: vars.fontSize['5xl'] }
+      ['4xl']: { fontSize: vars.fontSize['4xl'] }
     },
     hover: {
       true: {

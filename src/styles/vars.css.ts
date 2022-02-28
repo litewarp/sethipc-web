@@ -51,7 +51,10 @@ const root = createGlobalTheme(':root', {
     ['3xl']: '27px',
     ['4xl']: '35px',
     ['5xl']: '48px',
-    ['6xl']: '59px'
+    ['6xl']: '59px',
+    ['7xl']: '72px',
+    ['8xl']: '96px',
+    ['9xl']: '128px'
   },
   lineHeight: {
     xs: '1rem',
@@ -63,7 +66,10 @@ const root = createGlobalTheme(':root', {
     ['3xl']: '2.25rem',
     ['4xl']: '2.5rem',
     ['5xl']: '1',
-    ['6xl']: '1'
+    ['6xl']: '1',
+    ['7xl']: '1',
+    ['8xl']: '1',
+    ['9xl']: '1'
   },
   letterSpacing: {
     tighter: '-.05em',

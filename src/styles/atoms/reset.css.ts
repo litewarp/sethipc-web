@@ -20,7 +20,7 @@ export const base = style({
   verticalAlign: 'baseline',
   WebkitTapHighlightColor: 'transparent',
   selectors: {
-    [`[${hideFocusRingsDataAttribute}] &`]: {
+    [`${hideFocusRingsDataAttribute}`]: {
       outline: 'none'
     }
   }
